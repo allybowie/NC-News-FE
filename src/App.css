@@ -85,6 +85,10 @@
   grid-column: 3/5;
 }
 
+.Loading {
+  text-align: center;
+}
+
 .ListItemEven {
   display: flex;
   flex-direction: column;

@@ -16,7 +16,7 @@ class ArticlesList extends React.Component {
 
     componentDidMount() {
         axios
-          .get(`http://bowie-nc-news.herokuapp.com/api/articles?topic=${this.state.searchTerm}`)
+          .get(`http://bowie-nc-news.herokuapp.com/api/articles`)
           .then(({ data }) => {
             this.setState({articles: data.articles, isLoading: false})
           });
@@ -34,16 +34,16 @@ class ArticlesList extends React.Component {
 
         let arrayIndex = 0
         
-
         return <div className="ArticleDiv" ><ArticlesHeader title="Front Page"/>
         <label className="Sort">
         Sort articles by: <input placeholder="Order"></input>
       </label>
         <div className="ArticlesList">
     <ul>
-        {filteredArticles.map(article => {
+        
+        {isLoading ? <p className="Loading">We're getting your articles...</p> : filteredArticles.map(article => {
               arrayIndex ++
-            return <ArticleCard article={article} position={arrayIndex}/>;
+            return <ArticleCard key={article.article_id} article={article} position={arrayIndex}/>;
           })}
           {<ScrollUpButton />}
         </ul>
