@@ -23,9 +23,6 @@ class ArticlesList extends React.Component {
       }
 
 
-    handleChange = event => {
-        this.setState({inputValue: event.target.value})
-    }
 
 
     render () {
@@ -38,15 +35,10 @@ class ArticlesList extends React.Component {
         let arrayIndex = 0
         
 
-        return <><div className="SearchBar">
-        <form onSubmit={this.handleSearch}>
-        <label>
-          <input value={inputValue} onChange={this.handleChange} placeholder="Search NC News Topics"/>
-          <button>Search Articles</button>
-        </label>
-        </form>
-      </div> 
-      <ArticlesHeader title="Front Page"/>
+        return <div className="ArticleDiv" ><ArticlesHeader title="Front Page"/>
+        <label className="Sort">
+        Sort articles by: <input placeholder="Order"></input>
+      </label>
         <div className="ArticlesList">
     <ul>
         {filteredArticles.map(article => {
@@ -55,7 +47,8 @@ class ArticlesList extends React.Component {
           })}
           {<ScrollUpButton />}
         </ul>
-      </div></>
+      </div>
+      </div>
     }
 }
 

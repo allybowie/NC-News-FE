@@ -8,17 +8,32 @@ import ArticlesList from './components/articles-list';
 
 class App extends React.Component {
   state = {
-    currentSearchTerm: ""
+    currentSearchTerm: "",
+    inputValue: ""
   }
   render() {
-  return (<div className="App">
+
+  // handleChange = event => {
+  //     this.setState({inputValue: event.target.value})
+  // }
+
+  return (
+  <div className="App">
       <header className="Logo">
       NC News: The Best Place For NC News!
       </header>
-      <label className="Sort">
-        Sort articles by: <input placeholder="Order"></input>
-      </label>
-      <ArticlesList />
+      <div className="SearchBar">
+        <form>
+        <label>
+          <input value={this.state.inputValue} placeholder="Search NC News Topics"/>
+          <button>Search Articles</button>
+        </label>
+        </form>
+        </div>
+      <Router className="Main">
+      <ArticlesList path="/"/>
+      </Router>
+    
     </div>
   )
   }
