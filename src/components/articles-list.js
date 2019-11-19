@@ -19,7 +19,6 @@ class ArticlesList extends React.Component {
 
 
     componentDidMount() {
-      console.log("PROPS",this.props)
       getArticles()
       .then(articles => {
         console.log(articles)
@@ -27,8 +26,10 @@ class ArticlesList extends React.Component {
       })
     }
 
+    
+    // || sort_by !== prevProps.order || order !== prevProps.order
     componentDidUpdate(prevProps) {
-      const {topic} = this.props
+      const {topic, sort_by, order} = this.props
       if(topic !== prevProps.topic) {
       console.log("TOPIC", topic)
       getArticles({topic}).then(articles => {
