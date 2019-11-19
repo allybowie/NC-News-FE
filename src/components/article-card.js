@@ -16,7 +16,7 @@ class ArticleCard extends React.Component {
         if(this.props.position%2===0){
             listClass = "ListItemEven"
           } else listClass = "ListItemOdd"
-          console.log("ARTICLE", article)
+          
         return (
             <Link to={`/articles/${article.article_id}`}>
             <li className={listClass}>

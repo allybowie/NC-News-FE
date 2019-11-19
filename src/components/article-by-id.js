@@ -1,15 +1,21 @@
 import React from 'react';
 import '../App.css'
 import SingleHeader from './single-article-header';
+import CommentList from './comments-list';
 
 class ArticleById extends React.Component {
 
     state = {
-        commentsShown: true,
-        comments: []
+        commentsShown: false
+    }
+
+    handleCommentClick = () => {
+        this.setState({commentsShown: !this.state.commentsShown})
     }
 
     render () {
+
+    
 
 const {title, body, id, comment_count, topic, date, author, votes} = this.props
 const {commentsShown} = this.state
@@ -17,9 +23,12 @@ const {commentsShown} = this.state
 
             <SingleHeader title={`${title}`} comment_count={`${comment_count}`} topic={`${topic}`} date={`${date}`} author={`${author}`} votes={`${votes}`} />
             
-            <main className="ArticleBody">{body}</main>
+            <div className="ArticleBody">{body}</div>
+            <label  className="ShowComments">
+            <button onClick={this.handleCommentClick}>{commentsShown ? <p>Hide Comments</p> : <p>Show Comments</p>}</button>
+            {commentsShown && <CommentList id={`${id}`}/>}
             
-            <button className="ShowComments">{commentsShown ? <p>Hide Comments</p> : <p>Show Comments</p>}</button>
+            </label>
             </div>
     }
 }
