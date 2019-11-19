@@ -24,19 +24,17 @@ class ArticlesList extends React.Component {
     componentDidMount() {
       getArticles()
       .then(articles => {
-        console.log(articles)
         this.setState({articles, isLoading: false})
       })
     }
 
 
-    // || sort_by !== prevProps.order || order !== prevProps.order
     componentDidUpdate(prevProps) {
-      console.log(this.props)
-      const {topic, sort_by, order} = this.props
-      console.log("PROPS ALL", topic, sort_by, order)
-      if(topic !== prevProps.topic || sort_by !== prevProps.sort_by || order !== prevProps.order) {
-      getArticles({topic, order, sort_by}).then(articles => {
+      console.log("PREVPROPS",prevProps.topic)
+      const {topic} = this.props
+      console.log("PROPS ALL", topic)
+      if(topic !== prevProps.topic) {
+      getArticles({topic: topic}).then(articles => {
         this.setState({articles})
       })
     }
@@ -51,9 +49,7 @@ class ArticlesList extends React.Component {
     }
 
     render () {
-      console.log("STATE ORDER",this.state.order)
-      console.log("STATE SORT", this.state.sort_by)
-      console.log(this.props)
+
         const { articles, inputValue, isLoading, searchTerm, sort_by, order } = this.state
 
         const filteredArticles = articles.filter(article => {
