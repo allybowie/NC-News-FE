@@ -4,7 +4,11 @@ import { Link } from "@reach/router";
 import logo from './logo.svg';
 import './App.css';
 import ArticlesList from './components/articles-list';
+import ArticlePage from './components/article-page';
 import axios from 'axios';
+
+
+
 class App extends React.Component {
   state = {
     currentSearchTerm: "",
@@ -41,6 +45,7 @@ class App extends React.Component {
         </div>
       <Router className="Main">
       <ArticlesList path="/"/>
+      <ArticlePage path="/articles/:id/*"/>
       </Router>
     
     </div>
