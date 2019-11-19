@@ -23,7 +23,7 @@ render(){
 return  <form className="SearchBar">
         <label>
           <input value={this.state.inputValue} onChange={handleChange} placeholder="Search NC News Topics"/>
-          <Link to={`/articles/topic/${this.state.inputValue}`}><button onClick={handleClick}>Search Articles By Topic</button></Link>
+          <Link to={`/articles?topic=${this.state.inputValue}`}><button onClick={handleClick}>Search Articles By Topic</button></Link>
         </label>
         </form>
         

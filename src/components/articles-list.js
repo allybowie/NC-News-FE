@@ -8,6 +8,7 @@ import ScrollUpButton from "react-scroll-up-button";
 import { existsTypeAnnotation } from "@babel/types";
 import getArticles from '../api';
 import { Link } from '@reach/router';
+import createParams from '../utils'
 
 class ArticlesList extends React.Component {
     state = {
@@ -16,8 +17,8 @@ class ArticlesList extends React.Component {
         articles: [],
         isLoading: true,
         page: 1,
-        sort_by: "",
-        order: ""
+        sort_by: "created_at",
+        order: "asc"
     }
 
 
@@ -30,11 +31,12 @@ class ArticlesList extends React.Component {
 
 
     componentDidUpdate(prevProps) {
-      console.log("PREVPROPS",prevProps.topic)
+      console.log("PREVPROPS",this.props.location.search)
+      const params = createParams(this.props.location.search)
+      console.log("PARAMS", params)
       const {topic} = this.props
-      console.log("PROPS ALL", topic)
-      if(topic !== prevProps.topic) {
-      getArticles({topic: topic}).then(articles => {
+      if(this.props.location.search !== prevProps.location.search) {
+      getArticles(params).then(articles => {
         this.setState({articles})
       })
     }
@@ -74,7 +76,7 @@ class ArticlesList extends React.Component {
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
-        <Link to={`/articles/order/${sort_by}/${order}`}><button>Sort Articles</button></Link>
+        <Link to={`/articles?sort_by=${sort_by}&&order=${order}`}><button>Sort Articles</button></Link>
       </label>
       </form>
         <div className="ArticlesList">

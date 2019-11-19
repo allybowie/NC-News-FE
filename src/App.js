@@ -24,9 +24,10 @@ class App extends React.Component {
       <SearchBar/>
       <Router className="Main">
       <ArticlesList path="/"/>
+      {/* <A */}
       <ArticlePage path="/articles/:id/*"/>
-      <ArticlesList path="/articles/topic/:topic" />
-      <ArticlesList path="/articles/:sort_by/:order" />
+      {/* <ArticlesList path="/articles/topic/:topic" /> */}
+      <ArticlesList path="/articles" />
       </Router>
     </div>
   )
