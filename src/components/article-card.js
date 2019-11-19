@@ -25,6 +25,8 @@ class ArticleCard extends React.Component {
           <p>{article.author}</p>
           <p>{article.topic}</p>
           <p>{new Date(article.created_at).toLocaleString()}</p>
+          <p>Score: {article.votes} --- Comments: {article.comment_count}</p>
+          
           </div>
             </li>
             </Link>

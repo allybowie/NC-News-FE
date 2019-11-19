@@ -7,6 +7,7 @@ import axios from 'axios';
 import ScrollUpButton from "react-scroll-up-button";
 import { existsTypeAnnotation } from "@babel/types";
 import getArticles from '../api';
+import { Link } from '@reach/router';
 
 class ArticlesList extends React.Component {
     state = {
@@ -14,7 +15,9 @@ class ArticlesList extends React.Component {
         inputValue: "",
         articles: [],
         isLoading: true,
-        page: 1
+        page: 1,
+        sort_by: "",
+        order: ""
     }
 
 
@@ -26,33 +29,58 @@ class ArticlesList extends React.Component {
       })
     }
 
-    
+
     // || sort_by !== prevProps.order || order !== prevProps.order
     componentDidUpdate(prevProps) {
+      console.log(this.props)
       const {topic, sort_by, order} = this.props
-      if(topic !== prevProps.topic) {
-      console.log("TOPIC", topic)
-      getArticles({topic}).then(articles => {
+      console.log("PROPS ALL", topic, sort_by, order)
+      if(topic !== prevProps.topic || sort_by !== prevProps.sort_by || order !== prevProps.order) {
+      getArticles({topic, order, sort_by}).then(articles => {
         this.setState({articles})
       })
     }
     }
 
+     handleOrder = (event) =>  {
+      this.setState({order: event.target.value})
+    }
+    
+    handleSort = event => {
+      this.setState({sort_by: event.target.value})
+    }
+
     render () {
+      console.log("STATE ORDER",this.state.order)
+      console.log("STATE SORT", this.state.sort_by)
       console.log(this.props)
-        const { articles, inputValue, isLoading, searchTerm } = this.state
+        const { articles, inputValue, isLoading, searchTerm, sort_by, order } = this.state
 
         const filteredArticles = articles.filter(article => {
             return article.topic === searchTerm || searchTerm === "";
           });
 
+         
+
         let arrayIndex = 0
         
         return <>
         <div className="ArticleDiv" ><ArticlesHeader title="Front Page"/>
-        <label className="Sort">
-        Sort articles by: <input placeholder="Order"></input>
+        <form className="Sort"><label className="SortBy">Sort By:
+        <select onChange={this.handleSort}>
+          <option value="created_at">Date</option>
+          <option value="votes">Popularity</option>
+          <option value="comment_count">Activity</option>
+        </select>
       </label>
+      <label className="SortOrder">Order:
+        <select onChange={this.handleOrder}>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+        <Link to={`/articles/order/${sort_by}/${order}`}><button>Sort Articles</button></Link>
+      </label>
+      </form>
         <div className="ArticlesList">
     <ul>
         

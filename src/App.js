@@ -26,6 +26,7 @@ class App extends React.Component {
       <ArticlesList path="/"/>
       <ArticlePage path="/articles/:id/*"/>
       <ArticlesList path="/articles/topic/:topic" />
+      <ArticlesList path="/articles/:sort_by/:order" />
       </Router>
     </div>
   )
