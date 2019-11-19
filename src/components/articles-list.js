@@ -2,8 +2,11 @@ import React from "react";
 import "../App.css";
 import ArticlesHeader from './article-header';
 import ArticleCard from './article-card';
+import SearchBar from './searchbar';
 import axios from 'axios';
 import ScrollUpButton from "react-scroll-up-button";
+import { existsTypeAnnotation } from "@babel/types";
+import getArticles from '../api';
 
 class ArticlesList extends React.Component {
     state = {
@@ -14,18 +17,28 @@ class ArticlesList extends React.Component {
         page: 1
     }
 
+
     componentDidMount() {
-        axios
-          .get(`http://bowie-nc-news.herokuapp.com/api/articles`)
-          .then(({ data }) => {
-            this.setState({articles: data.articles, isLoading: false})
-          });
-      }
+      console.log("PROPS",this.props)
+      getArticles()
+      .then(articles => {
+        console.log(articles)
+        this.setState({articles, isLoading: false})
+      })
+    }
 
-
-
+    componentDidUpdate(prevProps) {
+      const {topic} = this.props
+      if(topic !== prevProps.topic) {
+      console.log("TOPIC", topic)
+      getArticles({topic}).then(articles => {
+        this.setState({articles})
+      })
+    }
+    }
 
     render () {
+      console.log(this.props)
         const { articles, inputValue, isLoading, searchTerm } = this.state
 
         const filteredArticles = articles.filter(article => {
@@ -34,7 +47,8 @@ class ArticlesList extends React.Component {
 
         let arrayIndex = 0
         
-        return <div className="ArticleDiv" ><ArticlesHeader title="Front Page"/>
+        return <>
+        <div className="ArticleDiv" ><ArticlesHeader title="Front Page"/>
         <label className="Sort">
         Sort articles by: <input placeholder="Order"></input>
       </label>
@@ -48,7 +62,7 @@ class ArticlesList extends React.Component {
           {<ScrollUpButton />}
         </ul>
       </div>
-      </div>
+      </div></>
     }
 }
 

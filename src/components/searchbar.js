@@ -11,14 +11,14 @@ state = {
 
 
 render(){
-
+    console.log(this.state.inputValue)
     const handleChange = event => {
         this.setState({inputValue: event.target.value})
     }
 return  <form className="SearchBar">
         <label>
           <input value={this.state.inputValue} onChange={handleChange} placeholder="Search NC News Topics"/>
-          <button link={`/articles?topic=${this.state.inputValue}`}>Search Articles By Topic</button>
+          <Link to={`/articles/topic/${this.state.inputValue}`}><button>Search Articles By Topic</button></Link>
         </label>
         </form>
         

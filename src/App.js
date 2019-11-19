@@ -11,19 +11,22 @@ import axios from 'axios';
 
 
 class App extends React.Component {
+
+  
   render() {
+   
 
   return (
   <div className="App">
       <header className="Logo">
       NC News: The Best Place For NC News!
       </header>
-      <SearchBar />
+      <SearchBar/>
       <Router className="Main">
       <ArticlesList path="/"/>
       <ArticlePage path="/articles/:id/*"/>
+      <ArticlesList path="/articles/topic/:topic" />
       </Router>
-    
     </div>
   )
   }
