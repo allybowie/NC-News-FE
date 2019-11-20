@@ -18,7 +18,7 @@ class ArticlesList extends React.Component {
         isLoading: true,
         page: 1,
         sort_by: "created_at",
-        order: "asc"
+        order: "asc",
     }
 
 
@@ -30,13 +30,20 @@ class ArticlesList extends React.Component {
     }
 
 
-    componentDidUpdate(prevProps) {
-      console.log("PREVPROPS",this.props.location.search)
+    componentDidUpdate(prevProps, prevState) {
       const params = createParams(this.props.location.search)
-      console.log("PARAMS", params)
-      const {topic} = this.props
+
+      if(params.topic && prevProps.location.search!==this.props.location.search){
+        console.log(true)
+        this.setState({topic: params.topic})
+      }
+      
+     
+      console.log(this.props.location.search)
+      console.log(prevProps.location.search)
       if(this.props.location.search !== prevProps.location.search) {
       getArticles(params).then(articles => {
+        console.log(articles)
         this.setState({articles})
       })
     }
@@ -63,7 +70,7 @@ class ArticlesList extends React.Component {
         let arrayIndex = 0
         
         return <>
-        <div className="ArticleDiv" ><ArticlesHeader title="Front Page"/>
+        <div className="ArticleDiv" ><ArticlesHeader title={this.state.topic}/>
         <form className="Sort"><label className="SortBy">Sort By:
         <select onChange={this.handleSort}>
           <option value="created_at">Date</option>
@@ -76,7 +83,7 @@ class ArticlesList extends React.Component {
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
-        <Link to={`/articles?sort_by=${sort_by}&&order=${order}`}><button>Sort Articles</button></Link>
+        <Link to={`/articles?topic=${this.state.topic}&&sort_by=${sort_by}&&order=${order}`}><button>Sort Articles</button></Link>
       </label>
       </form>
         <div className="ArticlesList">

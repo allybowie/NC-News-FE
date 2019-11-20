@@ -5,13 +5,11 @@ import { Link } from '@reach/router';
 
 class SearchBar extends React.Component {
 state = {
-    currentSearchTerm: "",
     inputValue: ""
 }
 
 
 render(){
-    console.log(this.state.inputValue)
     const handleChange = event => {
         this.setState({inputValue: event.target.value})
     }
