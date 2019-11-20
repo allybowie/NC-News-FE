@@ -25,17 +25,17 @@ fetchArticle() {
 }
 
 fetchComments() {}
-
-    render () {
+render () {
        const {title, body, article_id, comment_count, topic, created_at, author, votes} = this.state.article
        const {isLoading} = this.state
+       const {user} = this.props
 
        const formattedDate = new Date(created_at).toLocaleString()
         // console.log("ARTICLE", article)
         return <div>
             {isLoading ? <h1>Loading article...</h1> : 
             <div>
-                <ArticleById body={`${body}`} title={`${title}`} id={`${article_id}`} comment_count={`${comment_count}`} topic={`${topic}`} date={`${formattedDate}`} author={`${author}`} votes={`${votes}`}/>
+                <ArticleById user={user} body={`${body}`} title={`${title}`} id={`${article_id}`} comment_count={`${comment_count}`} topic={`${topic}`} date={`${formattedDate}`} author={`${author}`} votes={`${votes}`}/>
                 </div>}
         </div>
     }

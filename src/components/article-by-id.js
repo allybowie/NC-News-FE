@@ -15,9 +15,13 @@ class ArticleById extends React.Component {
 
     render () {
 
+        
+
     
 
-const {title, body, id, comment_count, topic, date, author, votes} = this.props
+const {title, body, id, comment_count, topic, date, author, votes, user} = this.props
+
+console.log("ARTICLE PAGE USER", user)
 const {commentsShown} = this.state
         return <div className="ArticleDiv">
 
@@ -28,7 +32,7 @@ const {commentsShown} = this.state
             <button onClick={this.handleCommentClick}>{commentsShown ? <p>Hide Comments</p> : <p>Show Comments</p>}</button>
             
             </label>
-            {commentsShown && <CommentList id={`${id}`}/>}
+            {commentsShown && <CommentList id={`${id}`} user={user}/>}
             </div>
     }
 }

@@ -6,7 +6,7 @@ import SearchBar from './searchbar';
 import axios from 'axios';
 import ScrollUpButton from "react-scroll-up-button";
 import { existsTypeAnnotation } from "@babel/types";
-import getArticles from '../api';
+import * as api from '../api';
 import { Link } from '@reach/router';
 import createParams from '../utils'
 
@@ -23,7 +23,7 @@ class ArticlesList extends React.Component {
 
 
     componentDidMount() {
-      getArticles()
+      api.getArticles()
       .then(articles => {
         this.setState({articles, isLoading: false})
       })
@@ -38,7 +38,7 @@ class ArticlesList extends React.Component {
       }
 
       if(this.props.location.search !== prevProps.location.search) {
-      getArticles(params).then(articles => {
+      api.getArticles(params).then(articles => {
         this.setState({articles})
       })
     }
@@ -53,6 +53,8 @@ class ArticlesList extends React.Component {
     }
 
     render () {
+
+      console.log("ARTICLE LIST USER",this.props.user)
 
         const { articles, inputValue, isLoading, searchTerm, sort_by, order } = this.state
 

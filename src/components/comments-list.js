@@ -18,7 +18,18 @@ class CommentList extends React.Component {
           });
     }
 
+    
     render() {
+
+      const removeDeletedComment= (comment_id) => {
+        console.log("REMOVING")
+        let sansDeleted = this.state.comments.filter(comment => {
+          return comment.comment_id !== comment_id
+        })
+        this.setState({comments: sansDeleted})
+      }
+
+const {user} = this.props
 const {isLoading, comments} = this.state
 let arrayIndex = 0
         console.log("COMMENTS",comments)
@@ -28,7 +39,7 @@ let arrayIndex = 0
             {comments.map(comment => {
                 console.log(comment)
               arrayIndex ++
-            return <CommentCard key={`${comment.comment_id}`} comment={comment} position={arrayIndex}/>;
+            return <CommentCard key={`${comment.comment_id}`} comment={comment} position={arrayIndex} user={user} article={this.props.id} removeDeletedComment={removeDeletedComment}/>;
           })}
         </ul>}</>
     }

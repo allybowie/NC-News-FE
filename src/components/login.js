@@ -4,7 +4,7 @@ import {Link} from '@reach/router';
 
 class Login extends React.Component {
 state = {
-    selectedUser: ""
+    selectedUser: "weegembump"
 }
 
 handleChange = event => {
@@ -13,9 +13,8 @@ handleChange = event => {
 
     render () {
 
-        console.log("LOGIN STATE", this.state)
-
         const {handleLogin, user} = this.props
+
         return <div className="Login">
             {user === "" ? <form onSubmit={()=>{handleLogin(this.state.selectedUser)}}>
                 <select onChange={this.handleChange}>
