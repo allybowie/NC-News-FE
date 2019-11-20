@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from '@reach/router';
 import '../App.css'
 import SingleHeader from './single-article-header';
 import CommentList from './comments-list';
@@ -6,7 +7,8 @@ import CommentList from './comments-list';
 class ArticleById extends React.Component {
 
     state = {
-        commentsShown: false
+        commentsShown: false,
+        inputValue: ""
     }
 
     handleCommentClick = () => {
@@ -16,7 +18,9 @@ class ArticleById extends React.Component {
     render () {
 
         
-
+        const handleChange = event => {
+            this.setState({inputValue: event.target.value})
+        }
     
 
 const {title, body, id, comment_count, topic, date, author, votes, user} = this.props
@@ -29,8 +33,13 @@ const {commentsShown} = this.state
             
             <div className="ArticleBody">{body}</div>
             <label  className="ShowComments">
-            <button onClick={this.handleCommentClick}>{commentsShown ? <p>Hide Comments</p> : <p>Show Comments</p>}</button>
-            
+            <button onClick={this.handleCommentClick} className="CommentsButton">{commentsShown ? <p>Hide Comments</p> : <p>Show Comments</p>}</button>
+            <form>
+                <label>
+                <input className= "LeaveComment" value={this.state.inputValue} onChange={handleChange} placeholder="Write a comment here">
+                </input>
+                </label>
+                </form>
             </label>
             {commentsShown && <CommentList id={`${id}`} user={user}/>}
             </div>

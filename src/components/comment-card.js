@@ -22,17 +22,17 @@ class CommentCard extends React.Component {
         let listClass = ""
 
         if(position%2===0){
-            listClass = "ListItemEven"
-          } else listClass = "ListItemOdd"
+            listClass = "CommentEven"
+          } else listClass = "CommentOdd"
 
         const date = new Date(comment.created_at).toLocaleString()
-        return <li className={listClass}><div >
-            <p>{comment.author}</p>
-            <p>{comment.body}</p>
-            <p>{date}</p>
-            <p>{comment.votes}</p>
-            {user === comment.author && <button onClick={handleClick}>Delete Comment</button>}
-        </div>
+        
+        return <li className={listClass}>
+            <p className="CommentAuthor">{comment.author}</p>
+            <p className="CommentBody">{comment.body}</p>
+            <p className="CommentDate">{date}</p>
+            {/* <p className="CommentVotes">{comment.votes}</p> */}
+            {user === comment.author && <button onClick={handleClick} className="DeleteComment">Delete Comment</button>}
         </li>
     }
 }

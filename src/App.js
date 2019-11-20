@@ -31,13 +31,13 @@ class App extends React.Component {
 
   return (
   <div className="App">
-      <header className="Logo">
-      NC News: The Best Place For NC News!
-      </header>
+      <header className="App-Header">
+      <p className="Logo">NC News</p>
       <HomeButton />
       <SearchBar/>
       <Username user={this.state.user}/>
       <Login handleLogin={this.handleLogin} user={this.state.user}/>
+      </header>
       <Router className="Main">
       <ArticlesList path="/" user={this.state.user}/>
       {/* <A */}

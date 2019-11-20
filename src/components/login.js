@@ -16,7 +16,8 @@ handleChange = event => {
         const {handleLogin, user} = this.props
 
         return <div className="Login">
-            {user === "" ? <form onSubmit={()=>{handleLogin(this.state.selectedUser)}}>
+            {user === "" ? <form onSubmit={()=>{handleLogin(this.state.selectedUser)
+            this.setState({selectedUser: "weegembump"})}}>
                 <select onChange={this.handleChange}>
                     <option>weegembump</option>
                     <option>happyamy2016</option>
