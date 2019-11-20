@@ -34,14 +34,9 @@ const {commentsShown} = this.state
             <div className="ArticleBody">{body}</div>
             <label  className="ShowComments">
             <button onClick={this.handleCommentClick} className="CommentsButton">{commentsShown ? <p>Hide Comments</p> : <p>Show Comments</p>}</button>
-            <form>
-                <label>
-                <input className= "LeaveComment" value={this.state.inputValue} onChange={handleChange} placeholder="Write a comment here">
-                </input>
-                </label>
-                </form>
+            
             </label>
-            {commentsShown && <CommentList id={`${id}`} user={user}/>}
+            {commentsShown && <CommentList id={`${id}`} user={user} commentsShown={commentsShown}/>}
             </div>
     }
 }
