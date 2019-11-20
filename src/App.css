@@ -5,7 +5,7 @@
 
 .App {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 100px 6fr 1fr;
   text-align: center;
   border: 1px black solid;
@@ -17,7 +17,7 @@
 }
 
 .Main {
-  grid-column: 1/3;
+  grid-column: 1/6;
   grid-row: 2/3;
 }
 
@@ -45,8 +45,35 @@
   height: 100px;
 }
 
+.HomeButton {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  border: 1px black solid;
+  height: 100px;
+}
+
 .SearchBar {
-  grid-column:2/5;
+  grid-column:3/4;
+  grid-row: 1/2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  border: 1px black solid;
+  height: 100px;
+}
+
+.Username {
+  grid-column: 4/5;
+  grid-row: 1/2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  border: 1px black solid;
+  height: 100px;
+}
+
+.Login {
+  grid-column: 5/6;
   grid-row: 1/2;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
@@ -58,7 +85,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr repeat(1fr 4) 1fr;
-  grid-column-gap: 5px;
   grid-row:2/3;
 }
 
@@ -101,8 +127,6 @@
 .ArticlesList {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
   overflow: hidden;
   overflow-y:scroll;
   height: 541px;
@@ -121,7 +145,7 @@
   grid-column: 1/3;
   grid-row: 2/5;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-size: 12px;
   border: 1px black solid
 }
 
