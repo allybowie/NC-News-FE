@@ -54,8 +54,6 @@ class ArticlesList extends React.Component {
 
     render () {
 
-      console.log("ARTICLE LIST USER",this.props.user)
-
         const { articles, inputValue, isLoading, searchTerm, sort_by, order } = this.state
 
         const filteredArticles = articles.filter(article => {

@@ -248,6 +248,7 @@
 }
 
 .ListItemEven {
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -258,11 +259,12 @@
   text-align: center;
   border-radius: 2mm;
   align-content: center;
-  font-size: 15px;
+  font-size: 13px;
   /* border: 1px black solid */
 }
 
 .ListItemOdd {
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -273,7 +275,7 @@
   border-radius: 2mm;
   background:white;
   align-content: center;
-  font-size: 15px;
+  font-size: 13px;
   /* border: 1px black solid */
 }
 
