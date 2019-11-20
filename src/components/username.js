@@ -3,9 +3,10 @@ import '../App.css'
 
 class Username extends React.Component {
     render () {
+        const {user} = this.props
         return <div className="Username">
-            <p>
-                Username
+            <p className="UserText">
+                {user}
             </p>
         </div>
     }

@@ -4,7 +4,6 @@ import ArticlesHeader from './article-header';
 
 class SingleHeader extends React.Component {
     render() {
-        console.log(this.props)
         const {title, comment_count, date, author, topic, votes} = this.props
          
        return  <div className="IndividualHeader">

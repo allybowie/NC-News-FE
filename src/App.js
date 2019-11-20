@@ -14,9 +14,19 @@ import axios from 'axios';
 
 
 class App extends React.Component {
+  state = {
+    user: ""
+  }
 
+  handleLogin = user => {
+    if(user !== this.state.user) {
+    this.setState({user})
+    }
+  }
   
   render() {
+
+    console.log("USER", this.state.user)
    
 
   return (
@@ -26,14 +36,14 @@ class App extends React.Component {
       </header>
       <HomeButton />
       <SearchBar/>
-      <Username />
-      <Login />
+      <Username user={this.state.user}/>
+      <Login handleLogin={this.handleLogin} user={this.state.user}/>
       <Router className="Main">
-      <ArticlesList path="/"/>
+      <ArticlesList path="/" user={this.state.user}/>
       {/* <A */}
-      <ArticlePage path="/articles/:id/*"/>
+      <ArticlePage path="/articles/:id/*" user={this.state.user}/>
       {/* <ArticlesList path="/articles/topic/:topic" /> */}
-      <ArticlesList path="/articles" />
+      <ArticlesList path="/articles" user={this.state.user}/>
       </Router>
     </div>
   )

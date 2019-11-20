@@ -34,16 +34,11 @@ class ArticlesList extends React.Component {
       const params = createParams(this.props.location.search)
 
       if(params.topic && prevProps.location.search!==this.props.location.search){
-        console.log(true)
         this.setState({topic: params.topic})
       }
-      
-     
-      console.log(this.props.location.search)
-      console.log(prevProps.location.search)
+
       if(this.props.location.search !== prevProps.location.search) {
       getArticles(params).then(articles => {
-        console.log(articles)
         this.setState({articles})
       })
     }
