@@ -26,9 +26,9 @@ const {commentsShown} = this.state
             <div className="ArticleBody">{body}</div>
             <label  className="ShowComments">
             <button onClick={this.handleCommentClick}>{commentsShown ? <p>Hide Comments</p> : <p>Show Comments</p>}</button>
-            {commentsShown && <CommentList id={`${id}`}/>}
             
             </label>
+            {commentsShown && <CommentList id={`${id}`}/>}
             </div>
     }
 }
