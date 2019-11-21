@@ -21,10 +21,8 @@ render(){
     }
 
 return  <form className="SearchBar">
-        <label>
-          <textarea value={this.state.inputValue} onChange={handleChange} placeholder="Search NC News Topics"/>
-          <Link to={`/articles?topic=${this.state.inputValue}`}><button onClick={handleClick}>Search Articles By Topic</button></Link>
-        </label>
+          <input className="SearchInput" value={this.state.inputValue} onChange={handleChange} placeholder="Type here to search categories"/>
+          <Link to={`/articles?topic=${this.state.inputValue}`} className="SearchButtonLabel"><button className="SearchButton" onClick={handleClick}>Search</button></Link>
         </form>
         
 }

@@ -82,7 +82,7 @@ class ArticlesList extends React.Component {
         
         let category = topic
         if(homePage === true) {
-          category = "Front Page"
+          category = "front page"
         }
 
         let arrayIndex = 0
