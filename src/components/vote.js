@@ -52,7 +52,6 @@ class VoteCounter extends React.Component {
             voteCount = "ArtCardVoteCount"
         }
 
-        console.log("VOTE CSS",arrowUp, arrowDown, votesPosition, voteCount)
 
         let displayedVotes = +votes + this.state.votesChange
 

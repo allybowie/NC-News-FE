@@ -30,7 +30,13 @@ class ArticlesList extends React.Component {
       console.log("PARAMS TOPIC", params.topic)
       api.getArticles(params)
       .then(articles => {
+        console.log("PARAMS TOPIC in THEN", params.topic)
+        if(params.topic) {
+          this.setState({articles, isLoading: false, topic: params.topic})
+
+        } else {
         this.setState({articles, isLoading: false, topic: ""})
+        }
       }).catch(error => {
         this.setState({error: {status: error.response.status, msg: error.response.data.msg}})
       })
