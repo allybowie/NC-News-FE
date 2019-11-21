@@ -14,7 +14,6 @@ class ArticleCard extends React.Component {
         let listClass = ""
         
         const {article, user} = this.props
-        console.log("COMMENT COUNT", article.comment_count)
 
         if(this.props.position%2===0){
             listClass = "ListItemEven"

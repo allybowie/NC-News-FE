@@ -27,6 +27,7 @@ class ArticlesList extends React.Component {
 
     componentDidMount() {
       const params = createParams(this.props.location.search)
+      console.log("PARAMS TOPIC", params.topic)
       api.getArticles(params)
       .then(articles => {
         this.setState({articles, isLoading: false, topic: ""})
@@ -74,12 +75,9 @@ class ArticlesList extends React.Component {
           });
         
         let category = topic
-        console.log("CATEGORY", category)
         if(homePage === true) {
           category = "Front Page"
         }
-
-        console.log("NEW CATEGORY",category)
 
         let arrayIndex = 0
 
