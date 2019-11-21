@@ -9,13 +9,22 @@ class VoteCounter extends React.Component {
         votesChange: 0
     }
 
-    handleClick = inc_votes => {
-        console.log(inc_votes)
+    handleClick = (inc_votes, id) => {
+        console.log(inc_votes, id)
+        const voteUpdate = {
+            inc_votes
+        }
+
+        console.log("VOTE UPDATE", voteUpdate)
+
+        axios.patch(`http://bowie-nc-news.herokuapp.com/api/comments/${id}`, voteUpdate).then(response => {
+            this.setState({votesChange: this.state.votesChange + inc_votes})
+        })
     }
 
     render() {
 
-        const {votes, card, user} = this.props
+        const {votes, card, user, id} = this.props
 
         let arrowUp = "ArticleUp"
         let arrowDown = "ArticleDown"
@@ -38,7 +47,7 @@ class VoteCounter extends React.Component {
 
 
 
-    return <div className={votesPosition}>{user !== "" && <button className={arrowUp} onClick={() => {this.handleClick(1)}}>Upvote</button>}<p className={voteCount}>{votes}</p>{user !== "" && <button className={arrowDown} onClick={()=>{this.handleClick(-1)}}>Downvote</button>}</div>
+    return <div className={votesPosition}>{user !== "" && this.state.votesChange !== 1 && <button className={arrowUp} onClick={() => {this.handleClick(1, id)}}>Upvote</button>}<p className={voteCount}>{displayedVotes}</p>{user !== "" && this.state.votesChange !== -1 && <button className={arrowDown} onClick={()=>{this.handleClick(-1, id)}}>Downvote</button>}</div>
     }
 }
 

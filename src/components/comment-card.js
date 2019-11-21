@@ -34,7 +34,7 @@ class CommentCard extends React.Component {
             <p className="CommentAuthor">{comment.author}</p>
             <p className="CommentBody">{comment.body}</p>
             <p className="CommentDate">{date}</p>
-            <VoteCounter className="CommentVotes" votes={votes} card="comment" user={user}/>
+            <VoteCounter className="CommentVotes" votes={votes} card="comment" user={user} id={comment.comment_id}/>
             {user === comment.author && <button onClick={handleClick} className="DeleteComment">Delete Comment</button>}
         </li>
     }
