@@ -265,6 +265,7 @@
 .ArticlesList {
   display: flex;
   flex-direction: column;
+  /* justify-content: space-around; */
   overflow: hidden;
   overflow-y:scroll;
   height: 500px;
@@ -282,11 +283,13 @@
   grid-row: 1/2;
   background: #f0fafd;
   width: 3fr;
-  height: 20%;
+  height: 100px;
   font-family: 'Alata', sans-serif;
   text-align: center;
   border-radius: 2mm;
   align-content: center;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 }
 
 .ListItemOdd {
@@ -296,12 +299,14 @@
   grid-template-rows: 1fr 1fr 1fr;
   grid-column: 1/2;
   grid-row: 1/2;
-  height: 20%;
+  height: 100px;
   text-align: center;
   border-radius: 2mm;
   font-family: 'Alata', sans-serif;
   background:white;
   align-content: center;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 }
 
 .ArticleListItem {
@@ -309,6 +314,9 @@
   grid-row: 1/4;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  margin-top: 12px;
+  border-right: #d7e2e6 5px solid;
+
 }
 
 .ArtCardTitle {
@@ -342,19 +350,19 @@
 .ArtCardDate {
   grid-column: 1/2;
   grid-row:3/4;
-  margin-left: 20px;
   text-align: left;
   font-size: 12px;
   color: dimgrey;
   display: flex;
   flex-direction: row-reverse;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  margin-right: 5px;
 }
 
 .ArtCardComments {
+  margin-right: 5px;
   grid-column: 1/2;
   grid-row:1/2;
-  margin-left: 20px;
   font-size: 12px;
   color: dimgrey;
   display: flex;
@@ -365,10 +373,11 @@
 .ArtCardVotes {
   grid-column: 2/2;
   grid-row:1/2;
-  margin-left: 30px;
+  /* margin-left: 30px; */
   text-align: left;
   font-size: 10px;
   color: dimgrey;
+  height: 80px;
   text-decoration: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -379,8 +388,7 @@
   background: none;
   border: none;
   display: flex;
-  margin-top: 30px;
-  margin-left: 0%;
+  margin-top: 30%;
   flex-direction: row;
   align-content: center;
   justify-content: center;
@@ -392,12 +400,13 @@
 .ArtCardUp {
   grid-column: 1/2;
   background: rgb(202, 202, 202);
-  height: 30px;
-  width: 60px;
-  margin-top: 45px;
-  margin-left: 45px;
+  height: 35%;
+  width: 50%;
+  margin-top: 41%;
+  margin-left: 50%;
   border-radius: 2mm;
   align-content: center;
+  cursor: pointer;
 }
 
 .ArtCardDown {
@@ -406,10 +415,12 @@
   border: none;
   background: rgb(202, 202, 202);
   border-radius: 2mm;
-  height: 30px;
-  width: 60px;
+  height: 35%;
+  width: 50%;
   align-content: center;
-  margin-top: 45px;
+  margin-top: 41%;
+  margin-right: 50%;
+  cursor: pointer;
 }
 
 .ArrowUpButton {
