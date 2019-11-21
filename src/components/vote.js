@@ -46,11 +46,13 @@ class VoteCounter extends React.Component {
         }
 
         if(card === "articleList") {
-            arrowUp = "CommentUp"
-            arrowDown = "CommentDown"
-            votesPosition = "CommentVotes"
-            voteCount = "CommentVoteCount"
+            arrowUp = "ArtCardUp"
+            arrowDown = "ArtCardDown"
+            votesPosition = "ArtCardVotes"
+            voteCount = "ArtCardVoteCount"
         }
+
+        console.log("VOTE CSS",arrowUp, arrowDown, votesPosition, voteCount)
 
         let displayedVotes = +votes + this.state.votesChange
 

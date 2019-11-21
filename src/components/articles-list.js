@@ -20,7 +20,8 @@ class ArticlesList extends React.Component {
         page: 1,
         sort_by: "created_at",
         order: "asc",
-        error: null
+        error: null,
+        filtered: false
     }
 
 
@@ -28,7 +29,7 @@ class ArticlesList extends React.Component {
       const params = createParams(this.props.location.search)
       api.getArticles(params)
       .then(articles => {
-        this.setState({articles, isLoading: false, topic: "Front Page"})
+        this.setState({articles, isLoading: false, topic: ""})
       }).catch(error => {
         this.setState({error: {status: error.response.status, msg: error.response.data.msg}})
       })
@@ -43,8 +44,10 @@ class ArticlesList extends React.Component {
       }
 
       if(this.props.location.search !== prevProps.location.search) {
+      
+      this.setState({isLoading: true})
       api.getArticles(params).then(articles => {
-        this.setState({articles})
+        this.setState({articles, isLoading: false})
       }).catch(error => {
         this.setState({error: {status: error.response.status, msg: error.response.data.msg}})
       })
@@ -69,17 +72,21 @@ class ArticlesList extends React.Component {
         const filteredArticles = articles.filter(article => {
             return article.topic === searchTerm || searchTerm === "";
           });
-
+        
+        let category = topic
+        console.log("CATEGORY", category)
         if(homePage === true) {
-          topic = "Front Page"
+          category = "Front Page"
         }
+
+        console.log("NEW CATEGORY",category)
 
         let arrayIndex = 0
 
         if(error !== null) return <ErrorHeader error={error.status} description={error.msg}/>
         
         return <>
-        <div className="ArticleDiv" ><ArticlesHeader title={topic}/>
+        <div className="ArticleDiv" ><ArticlesHeader title={category}/>
         <form className="Sort"><label className="SortBy">Sort By:
         <select onChange={this.handleSort}>
           <option value="created_at">Date</option>

@@ -14,7 +14,7 @@ class ArticleCard extends React.Component {
         let listClass = ""
         
         const {article, user} = this.props
-        console.log("CARD USER", article.article_id)
+        console.log("COMMENT COUNT", article.comment_count)
 
         if(this.props.position%2===0){
             listClass = "ListItemEven"
@@ -27,6 +27,7 @@ class ArticleCard extends React.Component {
           <p className="ArtCardTitle">{article.title}</p>
           <p className="ArtCardAuthorBlock">Author: {article.author}</p>
           <p className="ArtCardTopic">Category: {article.topic}</p>
+          <p className="ArtCardComments">Comments: {article.comment_count}</p>
           <p className="ArtCardDate">Created at: {new Date(article.created_at).toLocaleString().replace(',', ' - ')}</p>
             </li>
             </Link>
