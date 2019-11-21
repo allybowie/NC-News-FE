@@ -54,7 +54,7 @@ textarea:focus {
   color: white;
   grid-row: 1/2;
   grid-column: 1/6;
-
+  /* position: static; */
 }
 
 .App-link {
@@ -131,25 +131,6 @@ textarea:focus {
   cursor: pointer;
 }
 
-/* .SearchButton:focus {
-  background: rgb(212, 212, 212);
-  border: none;
-  height: 30px;
-  width: 50px;
-  text-align: center;
-  font-family: 'Alata', sans-serif;
-  border-radius: 1mm;
-  cursor: pointer;
-}
-
-.SearchButtonLabel:focus {
-  grid-column: 2/4;
-  grid-row: 2/4;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-} */
 
 .Username {
   grid-column: 4/5;
@@ -353,7 +334,7 @@ textarea:focus {
   /* justify-content: space-around; */
   overflow: hidden;
   overflow-y:scroll;
-  height: 505px;
+  height: 550px;
   grid-column: 1/5;
   grid-row: 2/9;
   font-family: 'Alata', sans-serif;  font-size: 30px;
