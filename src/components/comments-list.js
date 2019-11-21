@@ -21,13 +21,21 @@ class CommentList extends React.Component {
     
     handleSubmit = event => {
       event.preventDefault()
-      console.log("VALUE",event.target.value)
-      // axios.patch('http://bowie-nc-news.herokuapp.com/api/articles/1/comments').then(({body: {comment}}) => {
-      //   console.log(comment)
-      //   this.state.comments.push(comment)
-      // })
+      const {value} = event.target.Comment
+      const {user} = this.props
+      console.log("VALUE",value)
+      console.log("USER", user)
+      const commentInfo = { body: value, username: user }
+
+      axios.post(`http://bowie-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`, commentInfo).then(({data : { comment }}) => {
+        const newComments = this.state.comments.unshift(comment)
+        console.log("NEW COMMENTS",newComments)
+        this.setState({inputValue: ""})
+      })
     }
     render() {
+
+      console.log("ORIGINAL COMMENTS", this.state.comments)
 
       const handleChange = event => {
         this.setState({inputValue: event.target.value})
@@ -50,7 +58,7 @@ let arrayIndex = 0
         <ul className="CommentList">
         {user !== "" && commentsShown === true && <form onSubmit={this.handleSubmit}>
                
-               <textarea className= "LeaveComment" value={this.state.inputValue} onChange={handleChange} placeholder="Write a comment here">
+               <textarea name="Comment" className= "LeaveComment" value={this.state.inputValue} onChange={handleChange} placeholder="Write a comment here">
                </textarea>
                <button>Leave Comment</button>
                
