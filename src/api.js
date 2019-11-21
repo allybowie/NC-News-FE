@@ -4,6 +4,7 @@ import axios from 'axios';
 export const getArticles = (params) => {
     return axios.get('http://bowie-nc-news.herokuapp.com/api/articles', {params})
     .then(({data}) => {
+
         return data.articles
     })
   }

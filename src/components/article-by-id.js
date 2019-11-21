@@ -25,11 +25,10 @@ class ArticleById extends React.Component {
 
 const {title, body, id, comment_count, topic, date, author, votes, user} = this.props
 
-console.log("ARTICLE PAGE USER", user)
 const {commentsShown} = this.state
         return <div className="ArticleDiv">
 
-            <SingleHeader title={`${title}`} comment_count={`${comment_count}`} topic={`${topic}`} date={`${date}`} author={`${author}`} votes={`${votes}`} />
+            <SingleHeader title={`${title}`} comment_count={`${comment_count}`} topic={`${topic}`} date={`${date}`} author={`${author}`} id={id} votes={`${votes}`} user={user} />
             
             <div className="ArticleBody">{body}</div>
             <label  className="ShowComments">

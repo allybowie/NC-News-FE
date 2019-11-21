@@ -9,13 +9,15 @@ import SearchBar from './components/searchbar';
 import Username from './components/username';
 import Login from './components/login';
 import HomeButton from './components/homebutton';
+import ErrorPage from './components/error';
 import axios from 'axios';
 
 
 
 class App extends React.Component {
   state = {
-    user: ""
+    user: "",
+    homePage: true
   }
 
   handleLogin = user => {
@@ -23,27 +25,36 @@ class App extends React.Component {
     this.setState({user})
     }
   }
+
+  goHome = event => {
+    this.setState({homePage: true})
+  }
+
+  goToTopic = event => {
+    this.setState({homePage: false})
+  }
   
   render() {
 
-    console.log("USER", this.state.user)
+    console.log("HOMEPAGE?", this.state.homePage)
    
 
   return (
   <div className="App">
       <header className="App-Header">
       <p className="Logo">NC News</p>
-      <HomeButton />
-      <SearchBar/>
+      <HomeButton goHome={this.goHome}/>
+      <SearchBar goToTopic={this.goToTopic}/>
       <Username user={this.state.user}/>
       <Login handleLogin={this.handleLogin} user={this.state.user}/>
       </header>
       <Router className="Main">
-      <ArticlesList path="/" user={this.state.user}/>
+      <ArticlesList path="/" user={this.state.user} homePage={this.state.homePage}/>
       {/* <A */}
       <ArticlePage path="/articles/:id/*" user={this.state.user}/>
       {/* <ArticlesList path="/articles/topic/:topic" /> */}
-      <ArticlesList path="/articles" user={this.state.user}/>
+      <ArticlesList path="/articles" user={this.state.user} homePage={this.state.homePage}/>
+      <ErrorPage default />
       </Router>
     </div>
   )

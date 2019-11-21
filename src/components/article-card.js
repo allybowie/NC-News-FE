@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link } from "@reach/router";
 import '../App.css'
 import VoteCounter from './vote'
-import ArrowUp from './icons8-thick-arrow-pointing-up-40.png'
 
 class ArticleCard extends React.Component {
     state = {
@@ -15,7 +14,7 @@ class ArticleCard extends React.Component {
         let listClass = ""
         
         const {article, user} = this.props
-        console.log("CARD USER", user)
+        console.log("CARD USER", article.article_id)
 
         if(this.props.position%2===0){
             listClass = "ListItemEven"
@@ -31,7 +30,7 @@ class ArticleCard extends React.Component {
           <p className="ArtCardDate">Created at: {new Date(article.created_at).toLocaleString().replace(',', ' - ')}</p>
             </li>
             </Link>
-          <VoteCounter votes={article.votes} id={article.article_id} className="ArtCardVotes" card="articleList" user={user}/>
+          <VoteCounter votes={+article.votes} id={article.article_id} className="ArtCardVotes" card="articleList" user={user}/>
             </div>
         )
     }
