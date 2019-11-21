@@ -59,7 +59,7 @@ let arrayIndex = 0
                
                </form>}
                {user === "" && commentsShown === true && <form>
-               <p>Please log in to leave a comment</p>
+               <p>Please log in to comment and vote</p>
                </form>}
             {comments.map(comment => {
               arrayIndex ++

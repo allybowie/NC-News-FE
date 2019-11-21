@@ -2,16 +2,19 @@ import React from "react";
 import axios from "axios";
 import { Link } from "@reach/router";
 import '../App.css'
+import VoteCounter from "./vote";
 import * as api from '../api';
 
 class CommentCard extends React.Component {
     state = {
-        votes: ""
+        votes: this.props.comment.votes
     }
 
     
     render() {
         const {user, position, comment, removeDeletedComment} = this.props
+
+        const {votes} = this.state
 
         const handleClick = () => {
             api.deleteComment(comment.comment_id).then(() => {
@@ -31,7 +34,7 @@ class CommentCard extends React.Component {
             <p className="CommentAuthor">{comment.author}</p>
             <p className="CommentBody">{comment.body}</p>
             <p className="CommentDate">{date}</p>
-            {/* <p className="CommentVotes">{comment.votes}</p> */}
+            <VoteCounter className="CommentVotes" votes={votes} card="comment" user={user}/>
             {user === comment.author && <button onClick={handleClick} className="DeleteComment">Delete Comment</button>}
         </li>
     }
