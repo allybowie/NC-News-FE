@@ -23,19 +23,15 @@ class CommentList extends React.Component {
       event.preventDefault()
       const {value} = event.target.Comment
       const {user} = this.props
-      console.log("VALUE",value)
-      console.log("USER", user)
+
       const commentInfo = { body: value, username: user }
 
       axios.post(`http://bowie-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`, commentInfo).then(({data : { comment }}) => {
         const newComments = this.state.comments.unshift(comment)
-        console.log("NEW COMMENTS",newComments)
         this.setState({inputValue: ""})
       })
     }
     render() {
-
-      console.log("ORIGINAL COMMENTS", this.state.comments)
 
       const handleChange = event => {
         this.setState({inputValue: event.target.value})
@@ -50,7 +46,6 @@ class CommentList extends React.Component {
       }
 
 const {user, commentsShown} = this.props
-console.log("Comments Shown", commentsShown)
 const {isLoading, comments, inputValue} = this.state
 let arrayIndex = 0
          return <>
