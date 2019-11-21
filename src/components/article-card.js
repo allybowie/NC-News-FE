@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Link } from "@reach/router";
 import '../App.css'
-import Votes from './vote'
+import VoteCounter from './vote'
 import ArrowUp from './icons8-thick-arrow-pointing-up-40.png'
 
 class ArticleCard extends React.Component {
@@ -11,24 +11,28 @@ class ArticleCard extends React.Component {
     }
 
     render() {
-        let listClass = ""
 
-        const {article} = this.props
+        let listClass = ""
+        
+        const {article, user} = this.props
+        console.log("CARD USER", user)
 
         if(this.props.position%2===0){
             listClass = "ListItemEven"
           } else listClass = "ListItemOdd"
           
         return (
+            <div className={listClass}>
                 <Link to={`/articles/${article.article_id}`}>
-            <li className={listClass} onClick={this.handleClick}>
+            <li className="ArticleListItem" onClick={this.handleClick}>
           <p className="ArtCardTitle">{article.title}</p>
           <p className="ArtCardAuthorBlock">Author: {article.author}</p>
           <p className="ArtCardTopic">Category: {article.topic}</p>
           <p className="ArtCardDate">Created at: {new Date(article.created_at).toLocaleString().replace(',', ' - ')}</p>
-          {/* <Votes votes={article.votes} className="ArtCardVotes"/> */}
             </li>
             </Link>
+          <VoteCounter votes={article.votes} id={article.article_id} className="ArtCardVotes" card="articleList" user={user}/>
+            </div>
         )
     }
 }

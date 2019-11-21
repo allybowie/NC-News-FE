@@ -55,6 +55,7 @@ class ArticlesList extends React.Component {
     render () {
 
         const { articles, inputValue, isLoading, searchTerm, sort_by, order } = this.state
+        const { user } = this.props
 
         const filteredArticles = articles.filter(article => {
             return article.topic === searchTerm || searchTerm === "";
@@ -81,16 +82,16 @@ class ArticlesList extends React.Component {
         <Link to={`/articles?topic=${this.state.topic}&&sort_by=${sort_by}&&order=${order}`}><button>Sort Articles</button></Link>
       </label>
       </form>
-        <div className="ArticlesList">
-    <ul>
+        
+    <ul  className="ArticlesList">
         
         {isLoading ? <p className="Loading">We're getting your articles...</p> : filteredArticles.map(article => {
               arrayIndex ++
-            return <ArticleCard key={article.article_id} article={article} position={arrayIndex}/>;
+            return <ArticleCard key={article.article_id} article={article} position={arrayIndex} user={user}/>;
           })}
           {<ScrollUpButton />}
         </ul>
-      </div>
+      
       </div></>
     }
 }

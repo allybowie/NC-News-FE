@@ -10,14 +10,24 @@ class VoteCounter extends React.Component {
     }
 
     handleClick = (inc_votes, id) => {
-        console.log(inc_votes, id)
+        console.log("PROPS",this.props)
+        const { card } = this.props
+
+        console.log("CARD", card)
+
         const voteUpdate = {
             inc_votes
         }
 
+        let patchedItem = "comments"
+
+        if(card === "articleList") {
+            patchedItem = "articles"
+        }
+
         console.log("VOTE UPDATE", voteUpdate)
 
-        axios.patch(`http://bowie-nc-news.herokuapp.com/api/comments/${id}`, voteUpdate).then(response => {
+        axios.patch(`http://bowie-nc-news.herokuapp.com/api/${patchedItem}/${id}`, voteUpdate).then(response => {
             this.setState({votesChange: this.state.votesChange + inc_votes})
         })
     }
@@ -39,10 +49,10 @@ class VoteCounter extends React.Component {
         }
 
         if(card === "articleList") {
-            arrowUp = "ListUp"
-            arrowDown = "ListDown"
-            votesPosition = "ListVotes"
-            voteCount = "ListVoteCount"
+            arrowUp = "CommentUp"
+            arrowDown = "CommentDown"
+            votesPosition = "CommentVotes"
+            voteCount = "CommentVoteCount"
         }
 
         let displayedVotes = votes + this.state.votesChange
