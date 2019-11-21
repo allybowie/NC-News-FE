@@ -31,8 +31,6 @@ class VoteCounter extends React.Component {
         let votesPosition = "ArticlePosition"
         let voteCount = "ArticleVoteCount"
 
-        console.log(card)
-
         if(card === "comment") {
             arrowUp = "CommentUp"
             arrowDown = "CommentDown"
@@ -40,12 +38,14 @@ class VoteCounter extends React.Component {
             voteCount = "CommentVoteCount"
         }
 
-        console.log(arrowUp, arrowDown)
+        if(card === "articleList") {
+            arrowUp = "ListUp"
+            arrowDown = "ListDown"
+            votesPosition = "ListVotes"
+            voteCount = "ListVoteCount"
+        }
 
         let displayedVotes = votes + this.state.votesChange
-        console.log(displayedVotes)
-
-
 
     return <div className={votesPosition}>{user !== "" && this.state.votesChange !== 1 && <button className={arrowUp} onClick={() => {this.handleClick(1, id)}}>Upvote</button>}<p className={voteCount}>{displayedVotes}</p>{user !== "" && this.state.votesChange !== -1 && <button className={arrowDown} onClick={()=>{this.handleClick(-1, id)}}>Downvote</button>}</div>
     }
