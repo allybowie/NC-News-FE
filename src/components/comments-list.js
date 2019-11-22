@@ -55,11 +55,11 @@ let arrayIndex = 0
                
                <textarea name="Comment" className= "LeaveComment" value={this.state.inputValue} onChange={handleChange} placeholder="Write a comment here">
                </textarea>
-               <button>Leave Comment</button>
+               <button className="LeaveCommentButton">Leave Comment</button>
                
                </form>}
                {user === "" && commentsShown === true && <form>
-               <p>Please log in to comment and vote</p>
+               <p className="PleaseLogIn">Please log in to comment and vote</p><p></p>
                </form>}
             {comments.map(comment => {
               arrayIndex ++

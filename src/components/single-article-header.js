@@ -10,11 +10,11 @@ class SingleHeader extends React.Component {
         console.log("HEADER USER", votes)
          
        return  <div className="IndividualHeader">
-            <p className="ArticleTitle">{title}</p>
-            <p className="ArticleTopic">Subject: {topic}</p>
-            <p className="ArticleAuthor">Written by {author}</p>
-            <p className="ArticleDate">Posted on {date}</p>
-            < VotesCounter votes={votes} id={id} className="ArtCardVotes" card="articleList" user={user}/>
+            <p className="IndiHeaderTitle">{title}</p>
+            <p className="IndiHeaderTopic">Subject: {topic}</p>
+            <p className="IndiHeaderAuthor">Written by {author}</p>
+            <p className="IndiHeaderDate">Posted on {date}</p>
+            < VotesCounter votes={votes} id={id} className="IndiHeaderVotes" card="indiArticle" user={user}/>
         </div>
     
 }

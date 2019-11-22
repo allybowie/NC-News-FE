@@ -24,7 +24,7 @@ handleChange = event => {
                     <option>jessjelly</option>
                     <option>grumpy19</option>
                 </select>
-                <button className="LoginButton">Login</button>
+                <button className="LoginButton">Sign In</button>
             </form> : <label className="LogoutForm"><div className="LogOutSelect"></div><button className="LogoutButton" onClick={()=>{handleLogin("")}}>Sign Out</button></label>}
             
         </div>
