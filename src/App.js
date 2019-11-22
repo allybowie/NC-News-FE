@@ -26,6 +26,8 @@ class App extends React.Component {
     }
   }
 
+ 
+
   goHome = event => {
     this.setState({homePage: true})
   }
@@ -42,9 +44,9 @@ class App extends React.Component {
   return (
   <div className="App">
       <header className="App-Header">
-      <p className="Logo">NC News</p>
+      <p className="Logo">nc news</p>
       <HomeButton goHome={this.goHome}/>
-      <SearchBar goToTopic={this.goToTopic}/>
+      <SearchBar goToTopic={this.goToTopic} handleSearch={this.handleSearch}/>
       <Username user={this.state.user}/>
       <Login handleLogin={this.handleLogin} user={this.state.user}/>
       </header>

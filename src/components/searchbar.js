@@ -13,7 +13,7 @@ render(){
     const handleChange = event => {
         this.setState({inputValue: event.target.value})
     }
-    const {goToTopic} = this.props
+    const {goToTopic, handleSearch} = this.props
 
     const handleClick = event => {
         this.setState({inputValue: ""})
