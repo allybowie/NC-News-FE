@@ -20,7 +20,7 @@ componentDidMount() {
 }
 
 fetchArticle() {
-    return axios.get(`http://bowie-nc-news.herokuapp.com/api/articles/${this.props.id}`)
+    return axios.get(`https://bowie-nc-news.herokuapp.com/api/articles/${this.props.id}`)
     .then(response => {
         this.setState({article: response.data.article, isLoading: false})
     }).catch(error => {

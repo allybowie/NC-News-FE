@@ -12,7 +12,7 @@ class CommentList extends React.Component {
 
     componentDidMount(){
         axios
-          .get(`http://bowie-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`)
+          .get(`https://bowie-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`)
           .then(({ data }) => {
             this.setState({comments: data.comments, isLoading: false})
           });
@@ -26,7 +26,7 @@ class CommentList extends React.Component {
 
       const commentInfo = { body: value, username: user }
 
-      axios.post(`http://bowie-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`, commentInfo).then(({data : { comment }}) => {
+      axios.post(`https://bowie-nc-news.herokuapp.com/api/articles/${this.props.id}/comments`, commentInfo).then(({data : { comment }}) => {
         const newComments = this.state.comments.unshift(comment)
         this.setState({inputValue: ""})
       })

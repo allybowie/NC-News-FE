@@ -23,7 +23,7 @@ class VoteCounter extends React.Component {
         }
 
 
-        axios.patch(`http://bowie-nc-news.herokuapp.com/api/${patchedItem}/${id}`, voteUpdate).then(response => {
+        axios.patch(`https://bowie-nc-news.herokuapp.com/api/${patchedItem}/${id}`, voteUpdate).then(response => {
             this.setState({votesChange: this.state.votesChange + inc_votes})
         })
     }

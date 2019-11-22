@@ -27,10 +27,8 @@ class ArticlesList extends React.Component {
 
     componentDidMount() {
       const params = createParams(this.props.location.search)
-      console.log("PARAMS TOPIC", params.topic)
       api.getArticles(params)
       .then(articles => {
-        console.log("PARAMS TOPIC in THEN", params.topic)
         if(params.topic) {
           this.setState({articles, isLoading: false, topic: params.topic})
 
