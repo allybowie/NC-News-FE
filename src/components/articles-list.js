@@ -44,6 +44,8 @@ class ArticlesList extends React.Component {
 
 
     componentDidUpdate(prevProps, prevState) {
+
+      window.scrollTo(0,0)
       const params = createParams(this.props.location.search)
 
       if(params.topic && prevProps.location.search!==this.props.location.search){
@@ -92,19 +94,19 @@ class ArticlesList extends React.Component {
         return <>
         <div className="ArticleDiv" ><ArticlesHeader title={category}/>
         <form className="Sort"><label className="SortBy">Sort By:
-        <select onChange={this.handleSort}>
+        <select onChange={this.handleSort} className= "SortSelect">
           <option value="created_at">Date</option>
           <option value="votes">Popularity</option>
           <option value="comment_count">Activity</option>
         </select>
       </label>
       <label className="SortOrder">Order:
-        <select onChange={this.handleOrder}>
+        <select onChange={this.handleOrder} className="OrderSelect">
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
-        <Link to={`/articles?topic=${this.state.topic}&&sort_by=${sort_by}&&order=${order}`}><button>Sort Articles</button></Link>
       </label>
+        <Link to={`/articles?topic=${this.state.topic}&&sort_by=${sort_by}&&order=${order}`} className="SortLink">Sort Articles</Link>
       </form>
         
     <ul  className="ArticlesList">

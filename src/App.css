@@ -4,11 +4,16 @@
 }
 
 input:focus,
-select:focus,
 button:focus {
   outline: none;
     color: dimgrey;
     background: transparent;
+    border: none;
+}
+
+select:focus {
+  outline: none;
+    color: dimgrey;
     border: none;
 }
 
@@ -73,7 +78,7 @@ textarea:focus {
   height: 100px;
   width: 1fr;
   text-align: center;
-  
+  /* border: 1px black solid; */
 }
 
 .HomeButton {
@@ -83,6 +88,8 @@ textarea:focus {
   grid-column: 2/3;
   grid-row: 1/1;
   text-decoration: none;
+  margin-right: 20%;
+    /* border: 1px black solid; */
 }
 
 .SearchBar {
@@ -95,6 +102,8 @@ textarea:focus {
   display: grid;
   grid-template-columns: 70% 10% 20%;
   grid-template-rows: 30% 20% 20% 30%;
+  /* border: 1px black solid; */
+
 }
 
 .SearchInput {
@@ -102,7 +111,7 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-top: 15%;
+  margin-top: 16%;
   height: 30px;
   text-align: center;
   font-family: 'Alata', sans-serif;
@@ -125,9 +134,10 @@ textarea:focus {
   border: none;
   height: 30px;
   width: 50px;
+  margin-left: 15px;
   text-align: center;
   font-family: 'Alata', sans-serif;
-  border-radius: 1mm;
+  border-radius: 0.5mm;
   cursor: pointer;
 }
 
@@ -140,10 +150,11 @@ textarea:focus {
   /* border: 1px black solid; */
   color: dimgrey;
   /* height: 100px; */
+  width: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 150px;
+  margin-left: 27%
 }
 
 .Login {
@@ -152,7 +163,76 @@ textarea:focus {
   font-family: 'Alata', sans-serif;
   /* border: 1px black solid; */
   height: 100px;
-  width: 100px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+
+.LoginForm {
+  grid-column: 1/3;
+  font-family: 'Alata', sans-serif;
+  /* border: 1px black solid; */
+  /* height: 100px; */
+  display: grid;
+  grid-template-columns: 160px 60px 10px;
+  grid-template-rows: 10px 30px 10px;
+  padding: 25px;
+}
+
+.LogoutForm {
+  grid-column: 1/4;
+  font-family: 'Alata', sans-serif;
+  /* border: 1px black solid; */
+  /* height: 100px; */
+  display: grid;
+  grid-template-columns: 160px 60px 10px;
+  grid-template-rows: 10px 30px 10px;
+  padding: 25px;
+}
+
+.LoginSelect {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  /* border: 1px black solid; */
+  height: 30px;
+  width: 150px;
+  border: none;
+  border-radius: 0.5mm;
+  font-family: 'Alata', sans-serif;
+  background: rgb(214, 214, 214);
+  /* margin-top: 0px; */
+}
+
+.LoginSelect {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  /* border: 1px black solid; */
+  height: 30px;
+  width: 150px;
+  border: none;
+  border-radius: 0.5mm;
+
+  /* margin-top: 0px; */
+}
+
+.LoginButton {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  width: 60px;
+  /* border: 1px black solid; */
+  background: rgb(214, 214, 214);
+  border-radius: 0.5mm;
+  font-family: 'Alata', sans-serif;
+}
+
+.LogoutButton {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  width: 60px;
+  /* border: 1px black solid; */
+  background: rgb(214, 214, 214);
+  border-radius: 0.5mm;
+  font-family: 'Alata', sans-serif;
 }
 
 .ArticleDiv {
@@ -176,26 +256,74 @@ textarea:focus {
   grid-row: 1/1;
   font-family: 'Alata', sans-serif;  height: 100px;
   margin-left: 20px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  /* border: 1px black solid; */
   font-size: 50px;
 }
 
 .Sort {
   font-family: 'Alata', sans-serif;  font-size: 15px;
   /* border: 1px black solid; */
-  grid-column: 3/4;
-  grid-row: 1/1;
-  height: 100px;
+  grid-column: 4/5;
+  grid-row: 1/3;
+  /* height: 100px; */
   display:grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  color: dimgrey;
+  margin-top: 10px;
+  margin-right: 15px;
 }
 
 .SortBy {
-  grid-row: 1/1;
+  grid-row: 1/2;
+  color: dimgrey;
+}
+
+.SortOrder {
+  grid-row: 2/3;
+  color: dimgrey;
+}
+
+.SortLink {
+  grid-row: 3/4;
+  background: rgb(214, 214, 214);
+  border: none;
+  border-radius: 1mm;
+  font-family: 'Alata', sans-serif;
+  height: 20px;
+  width: 150px;
+  margin-left: 95px;
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+}
+
+.SortSelect {
+  /* border: 1px black solid; */
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: 0.5mm;
+  font-size: 15px;
+  color: dimgrey;
+  background: transparent;
+
+  /* margin-top: 0px; */
+}
+
+.OrderSelect {
+  /* border: 1px black solid; */
+  height: 30px;
+  width: 110px;
+  border: none;
+  border-radius: 0.5mm;
+  font-size: 15px;
+  color: dimgrey;
+  background: transparent;
+  /* margin-top: 0px; */
 }
 
 .IndividualHeader {
