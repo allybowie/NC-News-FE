@@ -53,7 +53,7 @@ let arrayIndex = 0
         <ul className="CommentList">
         {user !== "" && commentsShown === true && <form onSubmit={this.handleSubmit}>
                
-               <textarea name="Comment" className= "LeaveComment" value={this.state.inputValue} onChange={handleChange} placeholder="Write a comment here">
+               <textarea required name="Comment" className= "LeaveComment" value={this.state.inputValue} onChange={handleChange} placeholder="Write a comment here">
                </textarea>
                <button className="LeaveCommentButton">Leave Comment</button>
                
