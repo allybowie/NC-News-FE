@@ -1,23 +1,44 @@
-const createParams = (query) => {
-    if(!query) return {}
+const createParams = (uri, search) => {
+  const pathConcat = uri + search;
 
-    let params = {}
+  const fullPath = pathConcat.replace(" ", "");
 
-    let queryArray = query.split("?")[1]
+  if (fullPath.length === 0) return {};
 
+  const pathArray = fullPath.split("/");
 
-    let finalQuery = queryArray.split("&&")
+  const query = pathArray[pathArray.length - 1];
 
-    let finalQueryArray = finalQuery.map(element => {
-        return element.split("=")
-    })
+  let params = {};
 
-    finalQueryArray.forEach(element => {
-        params[element[0]] = element[1]
+  let queryArray = query.split("?");
+
+  let querySplit = queryArray.map(element => {
+    return element.split("&&");
+  });
+
+  const queryStructure = [querySplit[0]];
+
+  if (querySplit[1]) {
+    querySplit[1].forEach(element => {
+      queryStructure.push(element);
     });
+  }
 
-    return params
+  const flatQuery = queryStructure.flat();
 
-}
+  let finalQueryArray = flatQuery.map(element => {
+    return element.split("=");
+  });
+
+  finalQueryArray.forEach(element => {
+    if (element.length === 1) {
+      params.topic = element[0];
+    } else {
+      params[element[0]] = element[1];
+    }
+  });
+  return params;
+};
 
 export default createParams;

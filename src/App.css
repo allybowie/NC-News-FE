@@ -3,31 +3,31 @@
   margin: 0px;
 }
 
-input:focus{
+input:focus {
   outline: none;
-    color: dimgrey;
-    background: transparent;
-    border: none;
+  color: dimgrey;
+  background: transparent;
+  border: none;
 }
 
 button:focus {
   outline: none;
-    color: dimgrey;
-    border: none;
+  color: dimgrey;
+  border: none;
 }
 
 select:focus {
   outline: none;
-    color: dimgrey;
-    border: none;
+  color: dimgrey;
+  border: none;
 }
 
 textarea:focus {
-    outline: none;
-    color: dimgrey;
-    background: transparent;
-    border: none;
-    border-bottom: rgb(136, 136, 136) 1px solid;
+  outline: none;
+  color: dimgrey;
+  background: transparent;
+  border: none;
+  border-bottom: rgb(136, 136, 136) 1px solid;
 }
 
 .App {
@@ -35,7 +35,6 @@ textarea:focus {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 100px 6fr 1fr;
   text-align: center;
-  /* border: 1px black solid; */
   height: 100vh;
 }
 
@@ -44,7 +43,7 @@ textarea:focus {
 }
 
 .UserText {
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 15px;
 }
 
@@ -53,18 +52,15 @@ textarea:focus {
   grid-row: 2/3;
 }
 
-/* d9e3e6 */
-
 .App-Header {
-  background:  #8ac2d3;
+  background: #8ac2d3;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(5 1fr);
+  grid-template-columns: 300px 200px 300px 300px 300px;
   grid-template-rows: 100px;
   color: white;
   grid-row: 1/2;
   grid-column: 1/6;
-  /* position: static; */
 }
 
 .App-link {
@@ -77,7 +73,7 @@ textarea:focus {
   justify-content: center;
   grid-column: 1/2;
   grid-row: 1/1;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 50px;
   color: black;
   height: 100px;
@@ -95,13 +91,13 @@ textarea:focus {
   grid-row: 1/1;
   text-decoration: none;
   margin-right: 20%;
-    /* border: 1px black solid; */
+  /* border: 1px black solid; */
 }
 
 .SearchBar {
-  grid-column:3/4;
+  grid-column: 3/4;
   grid-row: 1/3;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 20px;
   height: 100px;
   background: transparent;
@@ -109,7 +105,6 @@ textarea:focus {
   grid-template-columns: 70% 10% 20%;
   grid-template-rows: 30% 20% 20% 30%;
   /* border: 1px black solid; */
-
 }
 
 .SearchInput {
@@ -120,11 +115,11 @@ textarea:focus {
   margin-top: 16%;
   height: 30px;
   text-align: center;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 15px;
   background: transparent;
-  border: none;
-  color: dimgrey
+  border: black, 1px, solid;
+  color: dimgrey;
 }
 
 .SearchButtonLabel {
@@ -142,16 +137,15 @@ textarea:focus {
   width: 50px;
   margin-left: 15px;
   text-align: center;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   border-radius: 0.5mm;
   cursor: pointer;
 }
 
-
 .Username {
   grid-column: 4/5;
   grid-row: 1/1;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 40px;
   /* border: 1px black solid; */
   color: dimgrey;
@@ -160,13 +154,13 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 27%
+  margin-left: 27%;
 }
 
 .Login {
   grid-column: 5/6;
   grid-row: 1/1;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   /* border: 1px black solid; */
   height: 100px;
   display: grid;
@@ -176,7 +170,7 @@ textarea:focus {
 
 .LoginForm {
   grid-column: 1/3;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   /* border: 1px black solid; */
   /* height: 100px; */
   display: grid;
@@ -187,7 +181,7 @@ textarea:focus {
 
 .LogoutForm {
   grid-column: 1/4;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   /* border: 1px black solid; */
   /* height: 100px; */
   display: grid;
@@ -204,7 +198,7 @@ textarea:focus {
   width: 150px;
   border: none;
   border-radius: 0.5mm;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   background: rgb(214, 214, 214);
   /* margin-top: 0px; */
 }
@@ -228,7 +222,7 @@ textarea:focus {
   /* border: 1px black solid; */
   background: rgb(214, 214, 214);
   border-radius: 0.5mm;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
 }
 
 .LogoutButton {
@@ -238,14 +232,14 @@ textarea:focus {
   /* border: 1px black solid; */
   background: rgb(214, 214, 214);
   border-radius: 0.5mm;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
 }
 
 .ArticleDiv {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr repeat(1fr 4) 1fr;
-  grid-row:2/3;
+  grid-row: 2/3;
   height: 650px;
   background: #f0fafd;
 }
@@ -261,7 +255,8 @@ textarea:focus {
 .ArticlesHeader {
   grid-column: 1/3;
   grid-row: 1/1;
-  font-family: 'Alata', sans-serif;  height: 100px;
+  font-family: "Alata", sans-serif;
+  height: 100px;
   margin-left: 20px;
   margin-top: 20px;
   display: flex;
@@ -271,12 +266,13 @@ textarea:focus {
 }
 
 .Sort {
-  font-family: 'Alata', sans-serif;  font-size: 15px;
+  font-family: "Alata", sans-serif;
+  font-size: 15px;
   /* border: 1px black solid; */
   grid-column: 4/5;
   grid-row: 1/3;
   /* height: 100px; */
-  display:grid;
+  display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr;
   color: dimgrey;
@@ -299,7 +295,7 @@ textarea:focus {
   background: rgb(214, 214, 214);
   border: none;
   border-radius: 1mm;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   height: 20px;
   width: 150px;
   margin-left: 95px;
@@ -330,67 +326,46 @@ textarea:focus {
   font-size: 15px;
   color: dimgrey;
   background: transparent;
-  /* margin-top: 0px; */
 }
 
 .IndividualHeader {
   grid-column: 1/4;
   grid-row: 1/1;
-  display:grid;
-  grid-template-rows: 20px 15px 12px 5px;
-  grid-row-gap: 20px;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-row-gap: 0px;
   margin-left: 10px;
   margin-top: 10px;
-  font-family: 'Alata', sans-serif;  height: 100px;
-  border-bottom: 3px  rgb(80, 79, 79) solid;
+  font-family: "Alata", sans-serif;
+  height: auto;
+  border-bottom: 3px rgb(80, 79, 79) solid;
 }
 
 .IndiHeaderTitle {
   grid-row: 1/2;
-  /* border: 1px black solid; */
-  font-family: 'Alata', sans-serif;
-  font-size: 30px;
-  color: rgb(80, 79, 79);  text-align: left;
+  font-family: "Alata", sans-serif;
+  font-size: 25px;
+  color: rgb(80, 79, 79);
+  height: auto;
+  text-align: left;
   margin-left: 10px;
-}
-
-.IndiHeaderTitle2 {
-  grid-row: 1/2;
-  font-family: 'Alata', sans-serif;
-  font-size: 20px;
-  height:50px;
-  color: rgb(80, 79, 79);  text-align: left;
-  margin-left: 10px;
-  margin-bottom: 10px;
 }
 
 .IndiHeaderAuthor {
   grid-row: 2/3;
-  /* border: 1px black solid; */
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 20px;
   color: rgb(80, 79, 79);
   text-align: left;
   margin-top: 5px;
-  margin-left: 11px
-}
-
-.IndiHeaderAuthor2 {
-  grid-row: 2/3;
-  /* border: 1px black solid; */
-  font-family: 'Alata', sans-serif;
-  font-size: 17px;
-  color: rgb(80, 79, 79);
-  text-align: left;
-  margin-top: 15px;
-  margin-left: 11px
+  margin-left: 11px;
 }
 
 .IndiHeaderTopic {
   grid-row: 3/4;
-  /* border: 1px black solid; */
-  font-family: 'Alata', sans-serif;
-  color: rgb(80, 79, 79);  font-size: 12px;
+  font-family: "Alata", sans-serif;
+  color: rgb(80, 79, 79);
+  font-size: 12px;
   text-align: left;
   margin-left: 13px;
   margin-top: 5px;
@@ -399,41 +374,39 @@ textarea:focus {
 .IndiHeaderDate {
   grid-row: 3/4;
   grid-column: 2/3;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 10px;
   text-align: left;
   margin-left: 13px;
-  margin-top: 7px;
-  color: rgb(80, 79, 79);  font-size: 12px;
+  margin-top: 5px;
+  color: rgb(80, 79, 79);
+  font-size: 12px;
 }
 
-/* .IndiHeaderVotes {
+.IndiHeaderVotes {
   grid-row: 1/2;
-  border: 1px black solid;
-} */
+}
 
-.ArticlePosition {
+.ArticleVotes {
   grid-column: 2/3;
   grid-row: 1/4;
   display: grid;
   grid-template-columns: 10% 30% 20% 30% 10%;
   margin-top: 0px;
   height: 50px;
-  width: 400px;
-  /* border: 1px black solid; */
+  width: 350px;
 }
 
 .ArticleVoteCount {
   grid-column: 3/4;
   width: 20px;
   background: none;
-  /* border: 1px black solid; */
   display: flex;
   flex-direction: column;
   align-content: center;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   justify-content: center;
-  margin-left: 20px;
+  margin-left: 23px;
   margin-bottom: 5px;
   font-size: 30px;
   color: dimgrey;
@@ -445,36 +418,32 @@ textarea:focus {
   height: 20px;
   width: 100px;
   border-radius: 2mm;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   align-content: center;
   cursor: pointer;
-  /* border: 1px black solid; */
-  margin-top:15px;
-
+  margin-top: 15px;
 }
-
 
 .ArticleDown {
   grid-column: 4/5;
   background: rgb(202, 202, 202);
   height: 20px;
   width: 100px;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   border-radius: 2mm;
   align-content: center;
   cursor: pointer;
-  /* border: 1px black solid; */
-  margin-top:15px;
+  margin-top: 15px;
 }
 
 .ArticleBody {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  overflow-y:scroll;
+  overflow-y: scroll;
   grid-column: 1/3;
   grid-row: 2/5;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   color: dimgrey;
   text-align: left;
   margin: 15px;
@@ -484,20 +453,23 @@ textarea:focus {
 .ArticleTitle {
   grid-column: 1/3;
   grid-row: 1/1;
-  font-family: 'Alata', sans-serif;  font-size: 20px;
+  font-family: "Alata", sans-serif;
+  font-size: 20px;
   text-align: left;
 }
 
 .ArticleAuthor {
   grid-row: 2/2;
-  font-family: 'Alata', sans-serif;  font-size: 15px;
-  text-align: left
+  font-family: "Alata", sans-serif;
+  font-size: 15px;
+  text-align: left;
 }
 
 .ArticleTopic {
   grid-column: 1/2;
   grid-row: 3/3;
-  font-family: 'Alata', sans-serif;  font-size: 12px;
+  font-family: "Alata", sans-serif;
+  font-size: 12px;
   width: 1fr;
   text-align: left;
 }
@@ -505,15 +477,18 @@ textarea:focus {
 .ArticleDate {
   grid-column: 2/4;
   grid-row: 3/3;
-  font-family: 'Alata', sans-serif;  font-size: 12px;
+  font-family: "Alata", sans-serif;
+  font-size: 12px;
   width: 1fr;
   text-align: left;
 }
 
 .ArticleVotes {
-  grid-column: 4/4;
-  grid-row: 1/1;
-  font-family: 'Alata', sans-serif;  font-size: 20px;
+  grid-column: 3/3;
+  grid-row: 1/3;
+  font-family: "Alata", sans-serif;
+  font-size: 20px;
+  display: grid;
   width: 1fr;
   text-align: left;
 }
@@ -521,15 +496,13 @@ textarea:focus {
 .ArticleBody {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
   overflow: hidden;
-  overflow-y:scroll;
-  height:500px;
+  overflow-y: scroll;
+  height: 500px;
   grid-column: 1/4;
   grid-row: 2/2;
-  font-family: 'Alata', sans-serif;  font-size: 17px;
-  /* border: 1px black solid */
+  font-family: "Alata", sans-serif;
+  font-size: 17px;
 }
 
 .ShowComments {
@@ -542,7 +515,6 @@ textarea:focus {
   flex-direction: column;
   justify-content: flex-start;
   width: 80px;
-  /* border: 1px black solid; */
 }
 
 .CommentsButton {
@@ -551,7 +523,7 @@ textarea:focus {
   height: 30px;
   width: 100px;
   margin-left: 128px;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   background: rgb(202, 202, 202);
   border-radius: 0.5mm;
 }
@@ -564,32 +536,28 @@ textarea:focus {
   display: flex;
   outline: none;
   background: transparent;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 12px;
   border: none;
   border-bottom: rgb(136, 136, 136) 1px solid;
 }
 
 .PleaseLogIn {
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-
 .CommentList {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
   overflow: hidden;
-  overflow-y:scroll;
+  overflow-y: scroll;
   height: 530px;
   grid-column: 4/4;
   grid-row: 2/2;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
-  /* border: 1px black solid; */
 }
 
 .ShowCommentsButton {
@@ -603,7 +571,7 @@ textarea:focus {
   width: 70px;
   border: none;
   border-radius: 0.5mm;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -615,13 +583,13 @@ textarea:focus {
 .ArticlesList {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
   overflow: hidden;
-  overflow-y:scroll;
+  overflow-y: scroll;
   height: 550px;
   grid-column: 1/5;
   grid-row: 2/9;
-  font-family: 'Alata', sans-serif;  font-size: 30px;
+  font-family: "Alata", sans-serif;
+  font-size: 30px;
 }
 
 .ListItemEven {
@@ -634,7 +602,7 @@ textarea:focus {
   background: #f0fafd;
   width: 3fr;
   height: 100px;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   text-align: center;
   border-radius: 2mm;
   align-content: center;
@@ -652,8 +620,8 @@ textarea:focus {
   height: 100px;
   text-align: center;
   border-radius: 2mm;
-  font-family: 'Alata', sans-serif;
-  background:white;
+  font-family: "Alata", sans-serif;
+  background: white;
   align-content: center;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
@@ -670,7 +638,7 @@ textarea:focus {
 
 .ArtCardTitle {
   grid-column: 1/2;
-  grid-row:1/2;
+  grid-row: 1/2;
   margin-left: 20px;
   text-align: left;
   font-size: 20px;
@@ -679,7 +647,7 @@ textarea:focus {
 
 .ArtCardAuthorBlock {
   grid-column: 1/2;
-  grid-row:2/3;
+  grid-row: 2/3;
   text-align: left;
   font-size: 15px;
   color: dimgrey;
@@ -689,7 +657,7 @@ textarea:focus {
 
 .ArtCardTopic {
   grid-column: 1/2;
-  grid-row:3/4;
+  grid-row: 3/4;
   margin-left: 20px;
   text-align: left;
   font-size: 12px;
@@ -698,7 +666,7 @@ textarea:focus {
 
 .ArtCardDate {
   grid-column: 1/2;
-  grid-row:3/4;
+  grid-row: 3/4;
   text-align: left;
   font-size: 12px;
   color: dimgrey;
@@ -711,7 +679,7 @@ textarea:focus {
 .ArtCardComments {
   margin-right: 5px;
   grid-column: 1/2;
-  grid-row:1/2;
+  grid-row: 1/2;
   font-size: 12px;
   color: dimgrey;
   display: flex;
@@ -721,7 +689,7 @@ textarea:focus {
 
 .ArtCardVotes {
   grid-column: 2/2;
-  grid-row:1/2;
+  grid-row: 1/2;
   /* margin-left: 30px; */
   text-align: left;
   font-size: 10px;
@@ -738,7 +706,7 @@ textarea:focus {
   border: none;
   display: flex;
   margin-top: 30%;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   flex-direction: row;
   align-content: center;
   justify-content: center;
@@ -753,7 +721,7 @@ textarea:focus {
   margin-top: 41%;
   margin-left: 50%;
   background: rgb(202, 202, 202);
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   height: 35%;
   border-radius: 2mm;
   align-content: center;
@@ -765,7 +733,7 @@ textarea:focus {
   background: none;
   border: none;
   background: rgb(202, 202, 202);
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   border-radius: 2mm;
   height: 35%;
   width: 50%;
@@ -778,13 +746,13 @@ textarea:focus {
 .ArrowUpButton {
   grid-column: 1/2;
   background: none;
-  border: none
+  border: none;
 }
 
 .ArrowDownButton {
   grid-column: 3/4;
   background: none;
-  border: none
+  border: none;
 }
 
 .CommentEven {
@@ -794,7 +762,7 @@ textarea:focus {
   grid-template-rows: 40px 2fr;
   background: #f0fafd;
   width: 3fr;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   text-align: center;
   border-radius: 2mm;
   align-content: center;
@@ -809,7 +777,7 @@ textarea:focus {
   background: white;
   width: 3fr;
   /* height: 8%; */
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   text-align: center;
   border-radius: 2mm;
   align-content: center;
@@ -818,7 +786,7 @@ textarea:focus {
 
 .CommentAuthor {
   grid-column: 1/2;
-  grid-row:1/2;
+  grid-row: 1/2;
   margin-left: 10px;
   text-align: left;
   font-size: 15px;
@@ -827,7 +795,7 @@ textarea:focus {
 
 .CommentBody {
   grid-column: 1/4;
-  grid-row:2/2;
+  grid-row: 2/2;
   text-align: left;
   font-size: 12px;
   color: dimgrey;
@@ -839,7 +807,7 @@ textarea:focus {
 
 .CommentDate {
   grid-column: 3/3;
-  grid-row:3/4;
+  grid-row: 3/4;
   margin-left: 20px;
   margin-right: 6px;
   text-align: left;
@@ -852,12 +820,12 @@ textarea:focus {
 
 .CommentVotes {
   grid-column: 3/3;
-  grid-row:1/2;
+  grid-row: 1/2;
   text-align: left;
   font-size: 8px;
   color: dimgrey;
   height: 20px;
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 2fr 1fr 2fr;
 }
 
@@ -866,7 +834,7 @@ textarea:focus {
   background: none;
   border: none;
   display: flex;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   font-size: 12px;
   flex-direction: row;
   align-content: center;
@@ -881,11 +849,11 @@ textarea:focus {
   background: none;
   /* border: none; */
   border-radius: 0.5mm;
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   background: rgb(214, 214, 214);
   font-size: 10px;
   height: 1fr;
-  width: 60px
+  width: 60px;
 }
 
 .CommentDown {
@@ -893,22 +861,150 @@ textarea:focus {
   background: none;
   border-radius: 0.5mm;
   /* border: none; */
-  font-family: 'Alata', sans-serif;
+  font-family: "Alata", sans-serif;
   background: rgb(214, 214, 214);
-    font-size: 10px;
+  font-size: 10px;
   height: 1fr;
   width: 60px;
 }
 
 .DeleteComment {
   grid-column: 2/2;
-  grid-row:1/2;
+  grid-row: 1/2;
   margin-left: 20px;
   text-align: center;
   font-size: 8px;
   height: 25px;
   width: 50px;
   background: rgb(202, 202, 202);
-  font-family: 'Alata', sans-serif;
-  border-radius: 0.5mm
+  font-family: "Alata", sans-serif;
+  border-radius: 0.5mm;
+}
+
+@media only screen and (max-width: 1400px) {
+  .SearchInput {
+    /* font-size: 13px; */
+    margin-top: 15%;
+    margin-left: 70px;
+  }
+
+  .Login {
+    margin-left: 70px;
+  }
+
+  .HomeButton {
+    margin-left: 60px;
+  }
+
+  .Logo {
+    margin-left: 25px;
+    font-size: 40px;
+  }
+
+  .Username {
+    margin-left: 80px;
+  }
+
+  .App-Header {
+    grid-template-columns: 200px 100px 350px 250px 100px;
+  }
+}
+
+/* @media only screen and (max-width: 1325px) {
+  .SearchInput {
+    font-size: 13px;
+    margin-top: 18%;
+  }
+} */
+
+/* @media only screen and (max-width: 1275px) {
+  .SearchInput {
+    font-size: 13px;
+    margin-top: 19%;
+  }
+} */
+
+@media only screen and (max-width: 1265px) {
+  .App-Header {
+    grid-template-columns: 200px 100px 350px 200px 1fr;
+  }
+
+  .Username {
+    font-size: 12px;
+    margin-left: 25%;
+  }
+}
+
+@media only screen and (max-width: 1210px) {
+  .App-Header {
+    grid-template-columns: 200px 100px 350px 150px 1fr;
+  }
+
+  .Username {
+    font-size: 12px;
+    margin-left: 20%;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .App-Header {
+    grid-template-columns: 200px 100px 350px 100px 1fr;
+  }
+
+  .Username {
+    font-size: 12px;
+    margin-left: 5%;
+  }
+}
+
+@media only screen and (max-width: 1098px) {
+  .App-Header {
+    grid-template-columns: 200px 100px 250px 170px 1fr;
+  }
+
+  .HomeButton {
+    margin-left: 25px;
+  }
+
+  .SearchInput {
+    margin-left: 10px;
+    margin-top: 35px;
+  }
+
+  .SearchBar {
+    width: 250px;
+    grid-template-columns: 200px 50px;
+  }
+
+  .SearchButton {
+    grid-column: 2/3;
+    margin-left: 0px;
+  }
+
+  .Username {
+    font-size: 12px;
+    margin-left: 35%;
+  }
+}
+
+@media only screen and (max-width: 1066px) {
+  .App-Header {
+    grid-template-columns: 200px 100px 250px 125px 1fr;
+  }
+
+  .Username {
+    font-size: 12px;
+    margin-left: 29%;
+  }
+}
+
+@media only screen and (max-width: 1013px) {
+  .App-Header {
+    grid-template-columns: 200px 100px 250px 100px 1fr;
+  }
+
+  .Username {
+    font-size: 12px;
+    margin-left: 23%;
+  }
 }
