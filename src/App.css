@@ -30,14 +30,6 @@ textarea:focus {
   border-bottom: rgb(136, 136, 136) 1px solid;
 }
 
-.App {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 100px 6fr 1fr;
-  text-align: center;
-  height: 100vh;
-}
-
 .App-logo {
   height: 40vmin;
 }
@@ -508,20 +500,25 @@ textarea:focus {
 .ShowComments {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto 1fr;
   grid-column: 4/4;
   grid-row: 1/2;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 80px;
+  height: 100px;
+}
+
+.CommentButtonText {
+  font-size: 15px;
 }
 
 .CommentsButton {
-  grid-row: 1/2;
+  grid-row: 1/3;
   margin-top: 30px;
   height: 30px;
-  width: 100px;
+  width: 150px;
   margin-left: 128px;
   font-family: "Alata", sans-serif;
   background: rgb(202, 202, 202);
@@ -567,7 +564,7 @@ textarea:focus {
 
 .LeaveCommentButton {
   background: rgb(214, 214, 214);
-  height: 30px;
+  height: 50px;
   width: 70px;
   border: none;
   border-radius: 0.5mm;
@@ -601,7 +598,7 @@ textarea:focus {
   grid-row: 1/2;
   background: #f0fafd;
   width: 3fr;
-  height: 100px;
+  height: 120px;
   font-family: "Alata", sans-serif;
   text-align: center;
   border-radius: 2mm;
@@ -617,7 +614,7 @@ textarea:focus {
   grid-template-rows: 1fr 1fr 1fr;
   grid-column: 1/2;
   grid-row: 1/2;
-  height: 100px;
+  height: 120px;
   text-align: center;
   border-radius: 2mm;
   font-family: "Alata", sans-serif;
@@ -717,7 +714,7 @@ textarea:focus {
 
 .ArtCardUp {
   grid-column: 1/2;
-  width: 50%;
+  width: 55%;
   margin-top: 41%;
   margin-left: 50%;
   background: rgb(202, 202, 202);
@@ -731,12 +728,11 @@ textarea:focus {
 .ArtCardDown {
   grid-column: 3/4;
   background: none;
-  border: none;
   background: rgb(202, 202, 202);
   font-family: "Alata", sans-serif;
   border-radius: 2mm;
   height: 35%;
-  width: 50%;
+  width: 55%;
   align-content: center;
   margin-top: 41%;
   margin-right: 50%;
@@ -1007,4 +1003,91 @@ textarea:focus {
     font-size: 12px;
     margin-left: 23%;
   }
+}
+
+@media only screen and (max-width: 980px) {
+  .App-Header {
+    grid-template-columns: 200px 100px 250px 80px 1fr;
+  }
+
+  /* .Username {
+    font-size: 12px;
+    margin-left: 23%;
+  } */
+}
+
+@media only screen and (max-width: 980px) {
+  .App-Header {
+    grid-template-columns: 200px 100px 250px 70px 1fr;
+  }
+
+  .Username {
+    font-size: 12px;
+    margin-left: 12%;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .App-Header {
+    grid-template-columns: 1fr 100px 1fr;
+    grid-template-rows: 75px 75px;
+  }
+
+  .App {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px auto 1fr;
+  }
+
+  .Logo {
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .SearchBar {
+    margin-left: 70px;
+  }
+
+  .SearchButton {
+    margin-top: 4px;
+    margin-left: 5px;
+  }
+
+  .HomeButton {
+    margin-top: 30px;
+  }
+
+  .Username {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-size: 12px;
+    margin-left: 40%;
+    margin-top: 25px;
+  }
+
+  .Login {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    margin-left: 75px;
+    margin-bottom: 40px;
+  }
+
+  .Main {
+    margin-top: 75px;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .ArticlesHeader {
+    font-size: 45px;
+    /* height: 50px; */
+    margin-top: 10px;
+  }
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 6fr 1fr;
+  text-align: center;
+  height: 100vh;
 }

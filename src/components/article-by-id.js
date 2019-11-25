@@ -43,7 +43,11 @@ class ArticleById extends React.Component {
         <div className="ArticleBody">{body}</div>
         <label className="ShowComments">
           <button onClick={this.handleCommentClick} className="CommentsButton">
-            {commentsShown ? <p>Hide Comments</p> : <p>Show Comments</p>}
+            {commentsShown ? (
+              <p className="CommentButtonText">Hide Comments</p>
+            ) : (
+              <p className="CommentButtonText">Show Comments</p>
+            )}
           </button>
         </label>
         {commentsShown && (
