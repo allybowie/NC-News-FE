@@ -1,5 +1,5 @@
 import React from "react";
-import CommentCard from "./comment-card";
+import CommentsList from "./create-comment-list";
 import isDisabled from "../utils/feature-disable";
 import "../App.css";
 import * as api from "../api";
@@ -70,21 +70,11 @@ class CommentList extends React.Component {
               ></textarea>
               <button className="LeaveCommentButton">Leave Comment</button>
             </form>
-            {comments.map((comment, i) => {
-              let listClass;
-              if (i % 2 === 0) {
-                listClass = "CommentEven";
-              } else listClass = "CommentOdd";
-              return (
-                <CommentCard
-                  key={`${comment.comment_id}`}
-                  comment={comment}
-                  listClass={listClass}
-                  user={user}
-                  removeDeletedComment={this.removeDeletedComment}
-                />
-              );
-            })}
+            <CommentsList
+              comments={comments}
+              user={user}
+              removeDeletedComment={this.removeDeletedComment}
+            />
           </ul>
         )}
       </>
