@@ -5,12 +5,13 @@ import CommentList from "./comments-list";
 
 class ArticleById extends React.Component {
   state = {
-    commentsShown: false,
-    inputValue: ""
+    commentsShown: false
   };
 
   handleCommentClick = () => {
-    this.setState({ commentsShown: !this.state.commentsShown });
+    let { commentsShown } = this.state;
+    commentsShown = !commentsShown;
+    this.setState({ commentsShown });
   };
 
   render() {

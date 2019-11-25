@@ -1,7 +1,7 @@
 import React from "react";
 import { Router } from "@reach/router";
 import "./App.css";
-import ArticlesList from "./components/articles-list";
+import ArticlesByTopic from "./components/articles-by-topic";
 import ArticlePage from "./components/article-page";
 import SearchBar from "./components/searchbar";
 import Username from "./components/username";
@@ -33,9 +33,9 @@ class App extends React.Component {
           <Login handleLogin={this.handleLogin} user={user} />
         </header>
         <Router className="Main">
-          <ArticlesList path="/" user={user} />
+          <ArticlesByTopic path="/" user={user} />
           <ArticlePage path="/articles/:id/*" user={user} />
-          <ArticlesList path="/articles/topic/:topic" user={user} />
+          <ArticlesByTopic path="/articles/topic/:topic" user={user} />
           <ErrorPage default />
         </Router>
       </div>

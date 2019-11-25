@@ -1,5 +1,6 @@
 import React from "react";
 import CommentCard from "./comment-card";
+import isDisabled from "../utils/feature-disable";
 import "../App.css";
 import * as api from "../api";
 
@@ -26,55 +27,61 @@ class CommentList extends React.Component {
       this.setState({ inputValue: "", comments: newComments });
     });
   };
+
+  handleChange = event => {
+    const { value } = event.target;
+    this.setState({ inputValue: value });
+  };
+
+  removeDeletedComment = comment_id => {
+    const { comments } = this.state;
+    let sansDeleted = comments.filter(comment => {
+      return comment.comment_id !== comment_id;
+    });
+    this.setState({ comments: sansDeleted });
+  };
+
   render() {
-    const handleChange = event => {
-      this.setState({ inputValue: event.target.value });
-    };
-
-    const removeDeletedComment = comment_id => {
-      let sansDeleted = this.state.comments.filter(comment => {
-        return comment.comment_id !== comment_id;
-      });
-      this.setState({ comments: sansDeleted });
-    };
-
-    const { user, commentsShown } = this.props;
+    const { user } = this.props;
     const { isLoading, comments, inputValue } = this.state;
-    let arrayIndex = 0;
+
+    const disabled = isDisabled(user);
+
+    let placeHolder = "Leave your thoughts below...";
+
+    if (disabled)
+      placeHolder =
+        "Commenting is not enabled for guests. Please sign in to leave a comment...";
+
     return (
       <>
         {isLoading ? (
           <p>Loading comments...</p>
         ) : (
           <ul className="CommentList">
-            {user !== "" && commentsShown === true && (
-              <form onSubmit={this.handleSubmit}>
-                <textarea
-                  required
-                  name="Comment"
-                  className="LeaveComment"
-                  value={inputValue}
-                  onChange={handleChange}
-                  placeholder="Write a comment here"
-                ></textarea>
-                <button className="LeaveCommentButton">Leave Comment</button>
-              </form>
-            )}
-            {user === "" && commentsShown === true && (
-              <form>
-                <p className="PleaseLogIn">Please log in to comment and vote</p>
-                <p></p>
-              </form>
-            )}
-            {comments.map(comment => {
-              arrayIndex++;
+            <form disabled={disabled} onSubmit={this.handleSubmit}>
+              <textarea
+                required
+                name="Comment"
+                className="LeaveComment"
+                value={inputValue}
+                onChange={this.handleChange}
+                placeholder={placeHolder}
+              ></textarea>
+              <button className="LeaveCommentButton">Leave Comment</button>
+            </form>
+            {comments.map((comment, i) => {
+              let listClass;
+              if (i % 2 === 0) {
+                listClass = "CommentEven";
+              } else listClass = "CommentOdd";
               return (
                 <CommentCard
                   key={`${comment.comment_id}`}
                   comment={comment}
-                  position={arrayIndex}
+                  listClass={listClass}
                   user={user}
-                  removeDeletedComment={removeDeletedComment}
+                  removeDeletedComment={this.removeDeletedComment}
                 />
               );
             })}

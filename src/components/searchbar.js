@@ -11,21 +11,22 @@ class SearchBar extends React.Component {
       this.setState({ inputValue: event.target.value });
     };
 
-    const handleClick = event => {
-      // console.log(event);
+    const handleClick = () => {
       this.setState({ inputValue: "" });
     };
+
+    const { inputValue } = this.state;
 
     return (
       <form className="SearchBar">
         <input
           className="SearchInput"
-          value={this.state.inputValue}
+          value={inputValue}
           onChange={handleChange}
           placeholder="Type to search categories"
         />
         <Link
-          to={`/articles/topic/${this.state.inputValue}`}
+          to={`/articles/topic/${inputValue}`}
           className="SearchButtonLabel"
         >
           <button className="SearchButton" onClick={handleClick}>
@@ -34,7 +35,6 @@ class SearchBar extends React.Component {
         </Link>
       </form>
     );
-    //possibly link to parametric endpoint eg `/articles/topic/:topic
   }
 }
 

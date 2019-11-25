@@ -5,11 +5,7 @@ const ArticlesHeader = props => {
 
   return (
     <>
-      {searchTerm === undefined ? (
-        <p className="ArticlesHeader">Front Page</p>
-      ) : (
-        <p className="ArticlesHeader">nc/{searchTerm}</p>
-      )}
+      <p className="ArticlesHeader">nc/{searchTerm}</p>
     </>
   );
 };

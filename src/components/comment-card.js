@@ -1,10 +1,11 @@
 import React from "react";
 import "../App.css";
-import VoteCounter from "./vote";
+import VoteCounter from "../components/vote";
 import * as api from "../api";
+import createDate from "../utils/create-date-string";
 
 const CommentCard = props => {
-  const { user, position, comment, removeDeletedComment } = props;
+  const { user, comment, removeDeletedComment, listClass } = props;
 
   const { author, body, created_at, votes, comment_id } = comment;
 
@@ -14,13 +15,7 @@ const CommentCard = props => {
     });
   };
 
-  let listClass = "";
-
-  if (position % 2 === 0) {
-    listClass = "CommentEven";
-  } else listClass = "CommentOdd";
-
-  const date = new Date(created_at).toLocaleString();
+  const date = createDate(created_at);
 
   return (
     <li className={listClass}>

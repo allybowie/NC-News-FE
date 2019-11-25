@@ -14,19 +14,20 @@ class VoteCounter extends React.Component {
       inc_votes
     };
 
-    api.updateVote(id, patch, voteUpdate).then(response => {
+    api.updateVote(id, patch, voteUpdate).then(() => {
       this.setState({ votesChange: this.state.votesChange + inc_votes });
     });
   };
 
   render() {
     const { votes, card, user, id } = this.props;
+    const { votesChange } = this.state;
 
-    let displayedVotes = +votes + this.state.votesChange;
+    let displayedVotes = +votes + votesChange;
 
     return (
       <div className={`${card}Votes`}>
-        {user !== "" && this.state.votesChange !== 1 && (
+        {user !== "" && votesChange !== 1 && (
           <button
             className={`${card}Up`}
             onClick={() => {
@@ -37,7 +38,7 @@ class VoteCounter extends React.Component {
           </button>
         )}
         <p className={`${card}VoteCount`}>{displayedVotes}</p>
-        {user !== "" && this.state.votesChange !== -1 && (
+        {user !== "" && votesChange !== -1 && (
           <button
             className={`${card}Down`}
             onClick={() => {
