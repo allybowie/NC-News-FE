@@ -11,6 +11,11 @@ class CommentList extends React.Component {
     inputValue: ""
   };
 
+  handleChange = event => {
+    const { value } = event.target;
+    this.setState({ inputValue: value });
+  };
+
   componentDidMount() {
     api.fetchComments(this.props.id).then(({ data }) => {
       this.setState({ comments: data.comments, isLoading: false });
@@ -28,11 +33,6 @@ class CommentList extends React.Component {
     });
   };
 
-  handleChange = event => {
-    const { value } = event.target;
-    this.setState({ inputValue: value });
-  };
-
   removeDeletedComment = comment_id => {
     const { comments } = this.state;
     let sansDeleted = comments.filter(comment => {
@@ -45,9 +45,8 @@ class CommentList extends React.Component {
     const { user } = this.props;
     const { isLoading, comments, inputValue } = this.state;
 
-    const disabled = isDisabled(user);
-
     let placeHolder = "Leave your thoughts below...";
+    const disabled = isDisabled(user);
 
     if (disabled)
       placeHolder =
@@ -69,7 +68,7 @@ class CommentList extends React.Component {
                 placeholder={placeHolder}
               ></textarea>
               <button className="LeaveCommentButton">Leave Comment</button>
-            </form>
+            </form>{" "}
             <CommentsList
               comments={comments}
               user={user}
