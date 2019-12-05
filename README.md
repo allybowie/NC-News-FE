@@ -14,6 +14,12 @@ The Back-End for NC-News can be found at https://github.com/allybowie/BE-NCNEWS,
     - Voting on existing articles
     - Voting on existing comments
 
+### The following topics exist and can be searched; anything else will result in a 404 error
+
+    - Coding
+    - Cooking
+    - Football
+
 ## Setting up the project
 
 Before starting, ensure you have the following installed on your machine:
