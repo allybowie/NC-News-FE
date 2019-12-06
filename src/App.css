@@ -275,11 +275,13 @@ textarea:focus {
 .SortBy {
   grid-row: 1/2;
   color: dimgrey;
+  margin-right: 30%;
 }
 
 .SortOrder {
   grid-row: 2/3;
   color: dimgrey;
+  margin-right: 30%;
 }
 
 .SortLink {
@@ -290,7 +292,7 @@ textarea:focus {
   font-family: "Alata", sans-serif;
   height: 20px;
   width: 150px;
-  margin-left: 95px;
+  margin-left: 5%;
   text-decoration: none;
   color: black;
   font-size: 13px;
@@ -519,7 +521,7 @@ textarea:focus {
   margin-top: 30px;
   height: 30px;
   width: 150px;
-  margin-left: 128px;
+  margin-left: 0px;
   font-family: "Alata", sans-serif;
   background: rgb(202, 202, 202);
   border-radius: 0.5mm;
@@ -694,7 +696,7 @@ textarea:focus {
   height: 80px;
   text-decoration: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 30% 40% 30%;
 }
 
 .ArtCardVoteCount {
@@ -702,7 +704,7 @@ textarea:focus {
   background: none;
   border: none;
   display: flex;
-  margin-top: 30%;
+  margin-top: 30px;
   font-family: "Alata", sans-serif;
   flex-direction: row;
   align-content: center;
@@ -714,8 +716,8 @@ textarea:focus {
 
 .ArtCardUp {
   grid-column: 1/2;
-  width: 55%;
-  margin-top: 41%;
+  width: 60px;
+  margin-top: 45px;
   margin-left: 50%;
   background: rgb(202, 202, 202);
   font-family: "Alata", sans-serif;
@@ -732,9 +734,9 @@ textarea:focus {
   font-family: "Alata", sans-serif;
   border-radius: 2mm;
   height: 35%;
-  width: 55%;
+  width: 60px;
   align-content: center;
-  margin-top: 41%;
+  margin-top: 45px;
   margin-right: 50%;
   cursor: pointer;
 }
@@ -755,7 +757,7 @@ textarea:focus {
   padding: 5px;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 40px 2fr;
+  grid-template-rows: 40px 30px 2fr;
   background: #f0fafd;
   width: 3fr;
   font-family: "Alata", sans-serif;
@@ -769,7 +771,7 @@ textarea:focus {
   padding: 5px;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 40px 2fr;
+  grid-template-rows: 40px 30px 2fr;
   background: white;
   width: 3fr;
   /* height: 8%; */
@@ -791,7 +793,7 @@ textarea:focus {
 
 .CommentBody {
   grid-column: 1/4;
-  grid-row: 2/2;
+  grid-row: 3/4;
   text-align: left;
   font-size: 12px;
   color: dimgrey;
@@ -803,7 +805,7 @@ textarea:focus {
 
 .CommentDate {
   grid-column: 3/3;
-  grid-row: 3/4;
+  grid-row: 2/3;
   margin-left: 20px;
   margin-right: 6px;
   text-align: left;
@@ -865,8 +867,8 @@ textarea:focus {
 }
 
 .DeleteComment {
-  grid-column: 2/2;
-  grid-row: 1/2;
+  grid-column: 1/2;
+  grid-row: 2/3;
   margin-left: 20px;
   text-align: center;
   font-size: 8px;
@@ -929,6 +931,11 @@ textarea:focus {
     font-size: 12px;
     margin-left: 25%;
   }
+
+  .Sort {
+    /* margin-right: 40%; */
+    grid-column: 3/4;
+  }
 }
 
 @media only screen and (max-width: 1210px) {
@@ -950,6 +957,10 @@ textarea:focus {
   .Username {
     font-size: 12px;
     margin-left: 5%;
+  }
+
+  .CommentAuthor {
+    font-size: 12px;
   }
 }
 
@@ -1028,6 +1039,15 @@ textarea:focus {
 }
 
 @media only screen and (max-width: 980px) {
+  .Sort {
+    font-size: 10px;
+    height: 100px;
+  }
+
+  .ArticlesHeader {
+    font-size: 40px;
+  }
+
   .App-Header {
     grid-template-columns: 1fr 100px 1fr;
     grid-template-rows: 75px 75px;
@@ -1079,11 +1099,70 @@ textarea:focus {
   }
 }
 
+@media only screen and (max-width: 948px) {
+  .Sort {
+    font-size: 10px;
+    width: 200px;
+    margin-left: 40%;
+  }
+
+  .ArtCardVoteCount {
+    font-size: 30px;
+    margin-top: 40%;
+  }
+
+  .ArticleDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 300px auto auto;
+    grid-row: 2/3;
+    height: 650px;
+    background: #f0fafd;
+  }
+
+  .LeaveComment {
+    margin-left: 5px;
+  }
+
+  .ArticleBody {
+    grid-column: 1/5;
+    height: 300px;
+  }
+
+  .ShowComments {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    margin-top: 0px;
+  }
+
+  .CommentList {
+    grid-row: 4/5;
+    grid-column: 1/5;
+    /* width: 300px; */
+  }
+
+  .ArticleAuthor {
+    margin-right: 50px;
+  }
+
+  .ArticleVotes {
+    grid-column: 2/3;
+  }
+}
+
 @media only screen and (max-width: 790px) {
   .ArticlesHeader {
     font-size: 45px;
     /* height: 50px; */
     margin-top: 10px;
+  }
+
+  .ArtCardTitle {
+    font-size: 15px;
+  }
+
+  .ArticleAuthor {
+    font-size: 10px;
   }
 }
 
