@@ -69,7 +69,7 @@ textarea:focus {
   font-size: 50px;
   color: black;
   height: 100px;
-  width: 1fr;
+  width: 100px;
   text-align: center;
 
   /* border: 1px black solid; */
@@ -336,6 +336,7 @@ textarea:focus {
 }
 
 .IndiHeaderTitle {
+  grid-column: 1/2;
   grid-row: 1/2;
   font-family: "Alata", sans-serif;
   font-size: 25px;
@@ -383,16 +384,19 @@ textarea:focus {
 
 .ArticleVotes {
   grid-column: 2/3;
-  grid-row: 1/4;
+  grid-row: 3/4;
   display: grid;
-  grid-template-columns: 10% 30% 20% 30% 10%;
+  grid-template-columns: 50px;
+  grid-template-rows: 20px 30px 20px;
   margin-top: 0px;
-  height: 50px;
-  width: 350px;
+  margin-right: 50px;
+  height: 70px;
+  width: 100px;
 }
 
 .ArticleVoteCount {
-  grid-column: 3/4;
+  grid-column: 1/2;
+  grid-row: 2/3;
   width: 20px;
   background: none;
   display: flex;
@@ -400,14 +404,15 @@ textarea:focus {
   align-content: center;
   font-family: "Alata", sans-serif;
   justify-content: center;
-  margin-left: 23px;
-  margin-bottom: 5px;
+  margin-left: 80%;
+  margin-top: 25px;
   font-size: 30px;
   color: dimgrey;
 }
 
 .ArticleUp {
-  grid-column: 2/3;
+  grid-column: 1/2;
+  grid-row: 1/2;
   background: rgb(202, 202, 202);
   height: 20px;
   width: 100px;
@@ -419,7 +424,8 @@ textarea:focus {
 }
 
 .ArticleDown {
-  grid-column: 4/5;
+  grid-column: 1/2;
+  grid-row: 3/4;
   background: rgb(202, 202, 202);
   height: 20px;
   width: 100px;
@@ -696,15 +702,21 @@ textarea:focus {
   height: 80px;
   text-decoration: none;
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 50px;
+  grid-template-rows: 20px 30px 20px;
+  /* margin-top: 0px; */
+  height: 70px;
+  width: 100px;
 }
 
 .ArtCardVoteCount {
-  grid-column: 2/3;
+  grid-column: 1/2;
+  grid-row: 2/3;
   background: none;
   border: none;
   display: flex;
-  margin-top: 30px;
+  margin-top: 15px;
+  margin-left: 20px;
   font-family: "Alata", sans-serif;
   flex-direction: row;
   align-content: center;
@@ -716,28 +728,30 @@ textarea:focus {
 
 .ArtCardUp {
   grid-column: 1/2;
-  width: 60px;
-  margin-top: 45px;
-  margin-left: 50%;
+  grid-row: 1/2;
+  width: 50px;
+  margin-top: 20px;
+  margin-left: 10px;
   background: rgb(202, 202, 202);
   font-family: "Alata", sans-serif;
-  height: 35%;
+  height: 20px;
   border-radius: 2mm;
   align-content: center;
   cursor: pointer;
 }
 
 .ArtCardDown {
-  grid-column: 3/4;
+  grid-column: 1/2;
+  grid-row: 3/4;
   background: none;
   background: rgb(202, 202, 202);
   font-family: "Alata", sans-serif;
   border-radius: 2mm;
-  height: 35%;
-  width: 60px;
+  height: 20px;
+  width: 50px;
   align-content: center;
-  margin-top: 45px;
-  margin-right: 50%;
+  margin-top: 35px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
@@ -1097,6 +1111,49 @@ textarea:focus {
   .Main {
     margin-top: 75px;
   }
+
+  .IndividualHeader {
+    grid-column: 1/4;
+    grid-row: 1/1;
+    display: grid;
+    grid-template-rows: auto auto auto 70px;
+    grid-row-gap: 0px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: "Alata", sans-serif;
+    height: auto;
+    border-bottom: 3px rgb(80, 79, 79) solid;
+  }
+
+  .ArticleVotes {
+    grid-row: 4/5;
+    grid-column: 1/2;
+    grid-template-rows: 30px;
+    grid-template-columns: 130px, 20px, 130px;
+    height: 30px;
+  }
+
+  .ArticleUp {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100px;
+  }
+
+  .ArticleVoteCount {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 20px;
+    margin-left: 70px;
+    margin-right: 20px;
+    margin-top: 17px;
+  }
+
+  .ArticleDown {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    width: 100px;
+    /* margin-right: 70px; */
+  }
 }
 
 @media only screen and (max-width: 948px) {
@@ -1143,10 +1200,6 @@ textarea:focus {
 
   .ArticleAuthor {
     margin-right: 50px;
-  }
-
-  .ArticleVotes {
-    grid-column: 2/3;
   }
 }
 
@@ -1247,7 +1300,7 @@ textarea:focus {
 @media only screen and (max-width: 551px) {
   .Logo {
     font-size: 30px;
-    width: 50%;
+    width: 50px;
   }
 
   .HomeButton {
@@ -1342,7 +1395,7 @@ textarea:focus {
     grid-column: 1/3;
     margin-right: 0%;
     margin-left: 0%;
-    width: 100%;
+    width: 100px;
   }
 
   .Login {
@@ -1375,7 +1428,7 @@ textarea:focus {
 @media only screen and (max-width: 417px) {
   .Logo {
     font-size: 30px;
-    width: 100%;
+    width: 10px;
     margin-top: 5%;
   }
 }
@@ -1383,7 +1436,6 @@ textarea:focus {
 @media only screen and (max-width: 320px) {
   .Logo {
     font-size: 30px;
-    width: 100%;
     margin-top: 5%;
     margin-right: 50%;
   }
@@ -1392,7 +1444,6 @@ textarea:focus {
 @media only screen and (max-width: 407px) {
   .Logo {
     font-size: 30px;
-    width: 100%;
     margin-top: 3%;
     margin-left: 20%;
   }
