@@ -595,6 +595,7 @@ textarea:focus {
   grid-row: 2/9;
   font-family: "Alata", sans-serif;
   font-size: 30px;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .ListItemEven {
@@ -605,7 +606,7 @@ textarea:focus {
   grid-column: 1/2;
   grid-row: 1/2;
   background: #f0fafd;
-  width: 3fr;
+  /* width: 3fr; */
   height: 120px;
   font-family: "Alata", sans-serif;
   text-align: center;
@@ -1446,6 +1447,53 @@ textarea:focus {
     font-size: 30px;
     margin-top: 3%;
     margin-left: 20%;
+  }
+
+  .ListItemEven {
+    grid-template-columns: 250px 20px;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 305px;
+  }
+
+  .ListItemOdd {
+    grid-template-columns: 250px 20px;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 305px;
+  }
+
+  .ArtCardVotes {
+    width: 20px;
+  }
+
+  .Username {
+    width: 100px;
+  }
+
+  .ArticlesHeader {
+    width: 30px;
+  }
+
+  .Sort {
+    grid-column: 2/3;
+    width: 70px;
+    margin-left: 100px;
+    height: 50px;
+    font-size: 10px;
+  }
+
+  .SortBy {
+    width: 50px;
+  }
+
+  .SortSelect {
+    font-size: 12px;
+    height: 20px;
+    margin-left: 60px;
+  }
+
+  .OrderSelect {
+    font-size: 12px;
+    height: 20px;
   }
 }
 

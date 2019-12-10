@@ -26,7 +26,7 @@ class SearchBar extends React.Component {
           placeholder="Type to search categories"
         />
         <Link
-          to={`/articles/topic/${inputValue}`}
+          to={`/articles/topic/${inputValue.toLowerCase()}`}
           className="SearchButtonLabel"
         >
           <button className="SearchButton" onClick={handleClick}>
